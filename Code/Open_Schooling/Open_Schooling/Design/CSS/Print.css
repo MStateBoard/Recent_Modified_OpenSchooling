@@ -1,0 +1,154 @@
+﻿
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #FAFAFA;
+}
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.page {
+    width: 210mm;
+    min-height: 270mm;
+    padding: 3mm;
+    margin: 1mm auto;
+    border: 1px #D3D3D3 solid;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.page1 {
+    width: 192mm;
+    min-height: 270mm;
+    padding: 3mm;
+    margin: 1mm auto;
+    border: 0px #D3D3D3 solid;
+    border-radius: 0px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.subpage {
+    padding: 0.5cm;
+    /* height: 257mm;*/
+    height: 290mm;
+    /* outline: 2cm #FFEAEA solid;*/
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+@media print {
+    html, body {
+        width: 210mm;
+        height: 297mm;
+    }
+
+    .page {
+        margin: 0;
+        border: initial;
+        border-radius: initial;
+        width: initial;
+        min-height: initial;
+        box-shadow: initial;
+        background: initial;
+        page-break-after: always;
+    }
+}
+
+table {
+    border-collapse: collapse;
+}
+
+    table td, table th {
+        vertical-align: top;
+        /*text-align: left;*/
+        font-size: small;
+        font-weight: 700;
+    }
+
+    table tr:first-child th {
+        border-top: 0;
+    }
+
+    table tr:last-child td {
+        border-bottom: 0;
+    }
+
+    table tr td:first-child,
+    table tr th:first-child {
+        border-left-style: none;
+        border-left-color: inherit;
+        border-left-width: 0;
+        font-size: small;
+        font-weight: 700;
+    }
+
+    table tr td:last-child,
+    table tr th:last-child {
+        border-right: 0;
+    }
+
+}
+
+.borderTable {
+    /*border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;*/
+    empty-cells: show;
+    margin-bottom: 10px;
+    background: white;
+    font-family: 'Ruda', sans-serif;
+    padding: 0px !important;
+    margin: 0px !important;
+    font-size: 16px;
+    width: 740px;
+}
+
+    .borderTable tr {
+        /*height:100px;*/
+    }
+
+    .borderTable td {
+        border-bottom: 3px solid Black;
+        border-right: 1px solid #fff;
+        empty-cells: show;
+        vertical-align: middle;
+        font-size: 16px;
+        color: Black;
+        font-weight: bold;
+    }
+
+    .borderTable th {
+        border-bottom: 3px solid Black;
+        border-right: 1px solid #fff;
+        empty-cells: show;
+        /*background-color:#eeeeee;*/
+        color: Black;
+        text-align: center;
+        font-size: 13px;
+    }
+
+@font-face {
+    font-family: "MyFont";
+    /*src: url("SakalMarathi.ttf") format("opentype");*/
+}
+
+body, p, div, ul, li, h1, h2, h3, h4, h5, h6 {
+    font-family: MyFont;
+    font-size: small;
+}
+
+.imgele {
+    height: 100px;
+    /*float: left;*/
+    width: 100px;
+    padding: 1px 0px;
+}

@@ -1,0 +1,436 @@
+﻿body
+{
+	background-position: #009999;
+	font-family: Arial, sans-serif;
+	line-height: 1.4;
+	font-size: small;
+	background: #FFFFFF;
+	margin: 0;
+	padding: 0;
+}
+
+a  
+{
+	color: #336699;
+	text-decoration: none;
+}
+a:hover 
+{ 
+	color: #880000; 
+}
+
+h1 
+{
+	margin: 0;
+	padding-left: 50px;
+	font-weight: 100;
+}
+h1 a 
+{ 
+	text-decoration: none;
+	color: #F9F7ED; 
+}
+h1 a:hover 
+{ 
+	border-bottom: 1px solid #F9F7ED; 
+	color: #F9F7ED; 
+}
+
+#wrap 
+{ 
+	width: 1000px;
+	margin: 20px auto;
+}
+
+#header
+{
+	
+	height: 130px;
+	line-height: 150px;
+	background: #40474f url('../Images/header.jpg') no-repeat;
+}
+
+
+#menu
+{	
+	color:White;
+	height: 40px;
+	line-height: 40px;
+	background: #40474f url('../Images/menu.jpg') no-repeat;
+}
+
+#menu ul 
+{
+	list-style-type: none;
+	margin: 0;
+	padding-left: 40px;
+	
+}
+#menu ul li 
+{
+	display: block;
+	float: left;
+}
+#menu ul li a
+{
+	display: block;
+	padding: 0 10px 0 10px;
+	text-decoration: none;
+	color: white;
+	font-size: 13px;
+	font-weight: 600;
+}
+#menu ul li a:hover 
+{
+	color: #fff;
+	background: url('../Images/menuover.png') repeat-x;
+}
+#lang
+{
+	margin: 0px 60px 0px 0px;
+	float: right;
+	color:White;
+}
+
+#contentwrap 
+{	
+	padding: 0 30px;
+	background: #40474f;
+	 background:url('../Images/content.jpg') repeat-y;
+}
+
+#content 
+{
+	float: right;
+	width: 100%;
+	margin-top: 20px;
+}
+#content h2 
+{	
+	margin: 0;
+	/*color: #F9F7ED;*/
+	height: 30px;
+	line-height: 30px;
+	padding: 0 0 0 10px;
+	font-size: 14px;
+}
+.CollapsibleImage
+{
+	margin: 0;
+	color: #F9F7ED;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 0 0 10px;
+	font-size: 14px;
+}
+
+#content p 
+{ 
+	padding: 0 10px 10px 10px; 
+	color: #232323;
+}
+#content ul 
+{ 
+	padding: 0 20px 10px 0px;
+}
+
+#sidebar 
+{
+	float: left;
+	margin-top: 20px;
+	width: 200px;
+}
+#sidebar ul li
+{
+	margin: 10px 0px 10px 0px;
+	font-size:13px;
+	font-weight:bold;  
+}
+
+#sidebar ul
+{
+	
+}
+
+#footer 
+{ 	
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	color: #fff;
+	background: #40474f url('../Images/footer.jpg');
+}
+#footer p 
+{ 
+	padding: 0; 
+	margin: 0; 
+}
+#footer a 
+{ 
+	color: #fff; 
+}
+#footer a:hover  
+{
+	text-decoration: underline; 
+}
+.MenuPanel
+{
+	margin: 0px;
+	height: 30px;
+	line-height: 30px;
+	font-weight: 600;
+	font-size: 12px;
+	padding: 0 0 20 0;
+	color:White;
+}
+.SidebarHeaders
+{
+	padding: 0px 0px 0px 20px;
+	color:White;
+	font-size: 14px;
+}
+.TableStyle
+{
+	padding: 10px 10px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	border-collapse: collapse;
+	border: thin double #CCC;
+}
+.AppTableStyle
+{
+	padding: 10px 10px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	border-collapse: collapse;
+	border: thin double #CCC;
+	overflow: scroll;
+}
+.QualTableStyle
+{
+	border: thin solid #CCC;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	border-collapse:collapse;
+}
+.Mandatory
+{
+	color:Red;
+	font-size: 12px;
+	margin-left:5px;	
+}
+.TextBoxStyle
+{
+	/*border-style:outset;	*/
+}
+.QualiTextBoxStyle
+{
+	/*border-style:outset;*/
+	width:60px;	
+}
+.InstiTextBoxStyle
+{
+	/*border-style:outset;*/
+	width:320px;	
+}
+.DistrictBoxStyle
+{
+	/*border-style:outset;*/
+	width:175px;	
+}
+.RadioStyle
+{
+	vertical-align:text-top;
+}
+.ControlCol
+{
+	padding: 0px 0px 0px 25px;
+}
+.DDControlCol
+{
+	padding: 0px 0px 0px 0px;
+	
+}
+.LableColStyle
+{
+	padding: 0px 0px 0px 50px;
+}
+.RowStyle
+{
+	margin: 25px 0px 0px 0px;
+	height: 30px;	
+}
+.CalenderButton
+{
+	padding: 0px 0px 6px 0px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	width: 20px;
+	height: 20px;
+	vertical-align: -8px;
+}
+.CalDOB
+{
+	display: none;		
+}
+.PrintDiv
+{
+	margin: 25px 0px 0px 10px;
+}
+#divSearch
+{
+	margin: 10px 10px 0px 10px;
+	width: 640px;
+	height: 200px;
+}
+.SearchTableStyle
+{
+	padding: 0px 0px 0px 0px;
+	margin: 30px 0px 0px 15px;
+}
+.SearchTableControlCol
+{
+	padding: 0px 0px 0px 10px;
+}
+.SearchTableRowStyle
+{
+	margin: 5px 0px 0px 5px;
+	height:30px;
+}
+.SearchTextBoxStyle
+{
+	/*border-style:outset;*/
+	width: 120px;	
+}
+.ButtonStyle
+{
+	background-image: url('../Images/Button.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.DateTextbox
+{
+	/*border-style:outset;*/
+	width:75px;
+	
+}
+.InvalidInput
+{
+	border: thin solid #FF0000;
+}
+.failureNotification
+{
+    font-size: 1.2em;
+    color: Red;
+}
+.QuestionText
+{
+	border-style: hidden;
+}
+.DistRowStyle
+{
+	margin: 25px 0px 0px 0px;
+	height: 30px;
+	display:none;	
+}
+.HyperLinkStyle
+{
+	padding: 10px;
+	background-color: #CC0000;
+	border: medium double #990000;
+	font-weight: bold;
+	font-size: small;
+	color: #FFFFFF;
+}
+.PostTableStyle
+{
+	margin: 0px 0px 0px 0px;
+	width: 90%;
+}
+.PostTableHeaderRowStyle
+{
+	background-color: #FFCC99;
+	font-size: small;
+	font-weight: bold;
+}
+.PostTableRowStyle
+{
+	height:auto;
+}
+.PostTableHCol1Style
+{
+	width:10%
+}
+.PostTableHCol2Style
+{
+	width:30%
+}
+.PostTableHCol3Style
+{
+	width:40%;
+}
+.PostTableHCol4Style
+{
+	width:30%;
+}
+.PostTableCol1Style
+{
+	width:10%;
+	vertical-align:middle;
+}
+.PostTableCol2Style
+{
+	width:30%;
+	vertical-align:middle;
+}
+.PostTableCol3Style
+{
+	width:40%;
+	vertical-align:middle;
+}
+.PostTableCol4Style
+{
+	width:30%;
+	vertical-align:middle;
+}
+.NotiTextColStyle
+{
+	width:60%
+}
+.NotiDateColStyle
+{
+	width:10%;
+}
+.NotiSrColStyle
+{
+	width:15%;
+}
+.NotiDetailsColStyle
+{
+	width:15%;
+	
+}
+.ConfDetailsRow
+{
+	height:25px;
+}
+.ConfDetailsSrNo
+{
+	font-weight:bold;
+}
+.ConfDetailsInfo
+{
+	padding: 0px 0px 0px 20px;
+	font-size: small;
+	font-weight: bold;
+	color:Gray;
+}
+
+.ConfDetailsInfoValue
+{
+	font-size:small;
+	font-weight:bold;
+	padding: 0px 0px 0px 35px;
+}
+.AddressCell
+{
+	padding-left:30px;
+}

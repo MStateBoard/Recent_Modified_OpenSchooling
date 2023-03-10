@@ -1,0 +1,151 @@
+﻿@model Open_Schooling.Models.Tbl_OpenSch_Result
+@{
+    ViewBag.Title = "ResultPrint";
+
+}
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="sitep.css" rel="stylesheet" />
+    <link href="stylep.css" rel="stylesheet" />
+    <style>
+        @@font-face {
+            font-family: "MyFont";
+            src: url("SakalMarathi.ttf") format("opentype");
+            font-size: medium;
+        }
+
+        body {
+            font-family: "MyFont", serif;
+        }
+    </style>
+</head>
+<body onload="window.print();">
+    <form id="form1" runat="server">
+        <div class="book">
+            <div class="page" style="width:100%">
+                <div class="subpage">
+                    <table cellspacing="2" cellpading="4" style="width: 100%;  font-weight: bold; height: 70px; padding-top: 10px; line-height: 30px; border-left-style: solid; border-left-color: inherit; border-left-width: 1px; border-right-style: solid; border-right-color: inherit; border-right-width: 1px; border-top-style: solid; border-top-color: inherit; border-top-width: 1px;">
+                        <tr>
+                            <td style="text-align:center;border-bottom:0px solid black; font-size: large;" colspan="4">महाराष्ट्र राज्य मुक्त विद्यालय मंडळ, पुणे</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center; border-bottom:1px solid black; font-size: medium; font-weight:bold;" colspan="4"><label ID="lblstd1" runat="server" Text=""></label> मूल्यमापन जानेवारी  -२०२२.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding-left: 10px;border-bottom:0px solid black;">उमेदवाराचे नांव -</td>
+                            <td style="padding-left: 10px;border-bottom:0px solid black; border-right:0px solid black;">
+                                <label ID="lblname" runat="server" Text="">@Model.Name</label>
+                            </td>
+                            <td style="padding-left: 10px;border-bottom:0px solid black;">@*आईचे नाव -*@</td>
+                            <td style="padding-left: 10px;border-bottom:0px solid black;">  @*<label ID="lblmname">@Model.Mother_Name</label>*@</td>
+
+                        </tr>
+                        <tr>
+                            <td style="padding-left: 10px;border-bottom:0px solid black;">विभागीय मंडळ -</td>
+                            <td style="padding-left: 10px;border-bottom:0px solid black;border-right:0px solid black;">  <label ID="lbldivision" runat="server" Text="">@Model.Division</label></td>
+                            <td style="padding-left: 10px;border-bottom:0px solid black;">बैठक  क्रमांक -</td>
+                            <td style="padding-left: 10px;border-bottom:0px solid black;">  <label ID="lblseat" runat="server" Text=""></label>@Model.seatnumber</td>
+                        </tr>
+                        <tr>
+                            <td colspan="8" style="border-bottom:0px solid black;">
+                                <div style="width: 100%; padding-top: 0px; padding-left: 0px;">
+
+                                    <table border="1" style="width: 100%; " cellspacing="0" cellpading="0">
+                                        <tr>
+                                            <td style="padding-left: 10px; padding-right:20px; font-weight: bold; line-height: 12px; padding-top: 5px; width: 20px">अ._क्रं.</td>
+                                            <td style="padding-left: 10px; font-weight: bold; line-height: 12px; padding-top: 15px;padding-bottom:15px">विषय सांकेतांक व नाव</td>
+                                            <td style="padding-left: 10px; font-weight: bold; line-height: 12px; padding-top: 5px; width: 80px">प्राप्त श्रेणी</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding-left: 10px; font-weight: bold;">
+                                                <label ID="Label1" runat="server" Text="">1</label>
+                                            </td>
+                                            <td style="padding-left: 10px; font-weight: bold;">
+                                                <label ID="Label2" runat="server" Text="">@Model.Sub1</label>
+                                            </td>
+                                            <td style="padding-left: 10px; font-weight: bold;">
+                                                <label ID="Label3" runat="server" Text="">@Model.Marks1</label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding-left: 10px; font-weight: bold;">
+                                                <label ID="Label4" runat="server" Text="">2</label>
+                                            </td>
+                                            <td style="padding-left: 10px; font-weight: bold;">
+                                                <label ID="Label5" runat="server" Text="">@Model.Sub2</label>
+                                            </td>
+                                            <td style="padding-left: 10px; font-weight: bold;">
+                                                <label ID="Label6" runat="server" Text="">@Model.Marks2</label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding-left: 10px; font-weight: bold;">
+                                                <label ID="Label7" runat="server" Text="">3</label>
+                                            </td>
+                                            <td style="padding-left: 10px; font-weight: bold;">
+                                                <label ID="Label8" runat="server" Text="">@Model.Sub3</label>
+                                            </td>
+                                            <td style="padding-left: 10px; font-weight: bold;">
+                                                <label ID="Label9" runat="server" Text="">@Model.Marks3</label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding-left: 10px; font-weight: bold;">
+                                                <label ID="Label10" runat="server" Text="">4</label>
+                                            </td>
+                                            <td style="padding-left: 10px; font-weight: bold;">
+                                                <label ID="Label11" runat="server" Text="">@Model.Sub4</label>
+                                            </td>
+                                            <td style="padding-left: 10px; font-weight: bold;">
+                                                <label ID="Label12" runat="server" Text="">@Model.Marks4</label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding-left: 10px; font-weight: bold;">
+                                                <label ID="Label13" runat="server" Text="">5</label>
+                                            </td>
+                                            <td style="padding-left: 10px; font-weight: bold;">
+                                                <label ID="Label14" runat="server" Text="">@Model.Sub5</label>
+                                            </td>
+                                            <td style="padding-left: 10px; font-weight: bold;">
+                                                <label ID="Label15" runat="server" Text="">@Model.Marks5</label>
+                                            </td>
+                                        </tr> @if (@Model.REMARKS != "ABSENT")
+                                        {
+                                            <tr>
+                                                <td style="padding-right: 10px; font-weight: bold; text-align:right;" colspan="2">
+                                                    <label ID="Label16" runat="server" Text="" style="text-align: left;">एकत्रित श्रेणी</label>
+                                                </td>
+
+                                                <td style="padding-left: 10px; font-weight: bold;">
+                                                    <label ID="totalgread" runat="server" Text="">@Model.REMARKS</label>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                        @if (@Model.REMARKS != "ABSENT")
+                        {
+                            <tr>
+                                <td style="padding-left: 10px; font-size: medium;" colspan="4">
+                                    अभिप्राय-इयत्ता @if (Model.STD == "5")
+                                    {<label>पाचवी</label>}
+                                    else
+                                    { <label>आठवी</label>} पर्यंतची अर्हता व विद्याविषयक कौशल्य <label ID="lblgread" runat="server" Text="">@Model.REMARKS</label> या श्रेणीत प्राप्त केली आहेत.
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+
+

@@ -1,0 +1,79 @@
+﻿@model Open_Schooling.Models.Tbl_Registration_Pre
+@{
+    ViewBag.Title = "PendingRegistration";
+    Layout = "~/Views/Shared/StateLayout.cshtml";
+}
+
+<form id="submit_form">
+    <div class="container">
+        <br /><br /><br />
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-2">
+                <span>  Mobile NO :</span><span style="color:Red">*</span>
+            </div>
+            <div class="col-lg-3">
+                @Html.TextBoxFor(model => model.Mobile_No, new { @class = "form-control", @name = "First_Name ", @id = "First_Name", @required = "required" })
+                @Html.ValidationMessageFor(model => model.Mobile_No, "", new { @class = "text-danger" })
+
+            </div>
+
+            <div class="col-lg-2">
+                <span>  Aadhar NO :</span><span style="color:Red">*</span>
+            </div>
+            <div class="col-lg-3">
+                @Html.TextBoxFor(model => model.Adhar_no, new { @class = "form-control", @name = "First_Name ", @id = "First_Name", @required = "required" })
+                @Html.ValidationMessageFor(model => model.Adhar_no, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+        <br /><br /><br />
+        <center>
+            <input type="button" id="btn_submit" class="btn btn-block btn-primary btn-lg font-weight-bolder auth-form-btn" value="SUBMIT" style="background-color: #3eadcf;font-weight:bold">
+        </center>
+    </div>
+</form>
+
+
+<script>
+    $("#btn_submit").click(function (e) {
+
+        /*  if ($("#submit_form").valid()) {*/
+        var formData = new FormData($(submit_form)[0]);
+        console.log(formData);
+        $.ajax({
+            url: "../State/PendingRegistration",
+            type: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+            beforeSend: function () {
+                Showloader();
+            },
+            complete: function () {
+                Hideloader();
+            },
+            success: function (Data) {
+                if (Data.Result) {
+                    Success_Alert(Data.Response);
+                    $(submit_form)[0].reset()
+                    if (Data.Result == "Submitted") {
+                        debugger
+
+                        window.location.replace(Data.Message);
+
+                    }
+                }
+                else {
+                    Error_Alert(Data.Response);
+                }
+
+            },
+            error: function (e1, e2, e3) {
+                /* Error_Alert(Data.Response);*/
+            }
+        });
+        /* }*/
+    })
+
+</script>

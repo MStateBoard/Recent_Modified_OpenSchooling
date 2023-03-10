@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Db_Open_SchoolingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Db_Open_Schooling.dbo.All_Taluka' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="All_Taluka">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Taluka" Type="nvarchar" MaxLength="255" />
+    <Property Name="District" Type="nvarchar" MaxLength="255" />
+    <Property Name="Division" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Db_Open_Schooling.dbo.Center_Login_Information' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Center_Login_Information">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="UDISE_No" Type="float" />
+    <Property Name="Center_Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Division" Type="nvarchar" MaxLength="50" />
+    <Property Name="Div_Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="District" Type="nvarchar" MaxLength="50" />
+    <Property Name="Taluka" Type="nvarchar" MaxLength="50" />
+    <Property Name="Contact_Center_Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Center_Name" Type="nvarchar(max)" />
+    <Property Name="Contact" Type="float" />
+    <Property Name="Medium" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="nvarchar" MaxLength="50" />
+    <Property Name="District_Code" Type="int" />
+  </EntityType>
+  <EntityType Name="Tbl_Application_Form">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Form_No" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UDISE_No" Type="nvarchar(max)" />
+    <Property Name="Contact_center" Type="nvarchar(max)" />
+    <Property Name="Last_name" Type="nvarchar(max)" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Middle_name" Type="nvarchar(max)" />
+    <Property Name="Mother_name" Type="nvarchar(max)" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Pincode" Type="nvarchar(max)" />
+    <Property Name="Mobile_no" Type="nvarchar(max)" />
+    <Property Name="Place_of_birth" Type="nvarchar(max)" />
+    <Property Name="Date_of_birth" Type="nvarchar(max)" />
+    <Property Name="Adhar_no" Type="nvarchar(max)" />
+    <Property Name="Gender" Type="nvarchar(max)" />
+    <Property Name="Minority_Religion" Type="nvarchar(max)" />
+    <Property Name="Category" Type="nvarchar(max)" />
+    <Property Name="Divyang" Type="nvarchar(max)" />
+    <Property Name="Medium" Type="nvarchar(max)" />
+    <Property Name="Type_Of_User" Type="nvarchar(max)" />
+    <Property Name="Subjects" Type="nvarchar(max)" />
+    <Property Name="Subject1" Type="nvarchar(max)" />
+    <Property Name="Subject2" Type="nvarchar(max)" />
+    <Property Name="Subject3" Type="nvarchar(max)" />
+    <Property Name="Subject4" Type="nvarchar(max)" />
+    <Property Name="Subject5" Type="nvarchar(max)" />
+    <Property Name="EC_Year" Type="nvarchar(max)" />
+    <Property Name="EC_Number" Type="nvarchar(max)" />
+    <Property Name="LastExamYear" Type="nvarchar(max)" />
+    <Property Name="LastExamSeatNo" Type="nvarchar(max)" />
+    <Property Name="Seat_No" Type="nvarchar(max)" />
+    <Property Name="Year_Id" Type="nvarchar(max)" />
+    <Property Name="Ip" Type="nvarchar(max)" />
+    <Property Name="DateNow" Type="nvarchar(max)" />
+    <Property Name="Photo" Type="nvarchar(max)" />
+    <Property Name="Signature" Type="nvarchar(max)" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Db_Open_Schooling.dbo.Tbl_CenterList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Tbl_CenterList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="division" Type="nvarchar" MaxLength="255" />
+    <Property Name="div_code" Type="nvarchar" MaxLength="50" />
+    <Property Name="district" Type="nvarchar" MaxLength="255" />
+    <Property Name="taluka" Type="nvarchar" MaxLength="255" />
+    <Property Name="center_code" Type="nvarchar" MaxLength="255" />
+    <Property Name="center_name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Medium" Type="nvarchar" MaxLength="255" />
+    <Property Name="active" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Db_Open_Schooling.dbo.Tbl_District' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Tbl_District">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="District" Type="nvarchar" MaxLength="50" />
+    <Property Name="DivCode" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Db_Open_Schooling.dbo.Tbl_OpenSch_Result' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Tbl_OpenSch_Result">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Form_No" Type="nvarchar(max)" />
+    <Property Name="seatnumber" Type="nvarchar(max)" />
+    <Property Name="STD" Type="nvarchar(max)" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Sub1" Type="nvarchar(max)" />
+    <Property Name="Marks1" Type="nvarchar(max)" />
+    <Property Name="Sub2" Type="nvarchar(max)" />
+    <Property Name="Marks2" Type="nvarchar(max)" />
+    <Property Name="Sub3" Type="nvarchar(max)" />
+    <Property Name="Marks3" Type="nvarchar(max)" />
+    <Property Name="Sub4" Type="nvarchar(max)" />
+    <Property Name="Marks4" Type="nvarchar(max)" />
+    <Property Name="Sub5" Type="nvarchar(max)" />
+    <Property Name="Marks5" Type="nvarchar(max)" />
+    <Property Name="REMARKS" Type="nvarchar(max)" />
+    <Property Name="Mother_Name" Type="nvarchar(max)" />
+    <Property Name="Division" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Tbl_payment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="order_id" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="tracking_id" Type="nvarchar(max)" />
+    <Property Name="bank_ref_no" Type="nvarchar(max)" />
+    <Property Name="order_status" Type="nvarchar(max)" />
+    <Property Name="failure_message" Type="nvarchar(max)" />
+    <Property Name="payment_mode" Type="nvarchar(max)" />
+    <Property Name="card_name" Type="nvarchar(max)" />
+    <Property Name="status_code" Type="nvarchar(max)" />
+    <Property Name="status_message" Type="nvarchar(max)" />
+    <Property Name="currency" Type="nvarchar(max)" />
+    <Property Name="amount_money" Type="nvarchar(max)" />
+    <Property Name="billing_name" Type="nvarchar(max)" />
+    <Property Name="billing_address" Type="nvarchar(max)" />
+    <Property Name="billing_city" Type="nvarchar(max)" />
+    <Property Name="billing_state" Type="nvarchar(max)" />
+    <Property Name="billing_zip" Type="nvarchar(max)" />
+    <Property Name="billing_country" Type="nvarchar(max)" />
+    <Property Name="billing_tel" Type="nvarchar(max)" />
+    <Property Name="billing_email" Type="nvarchar(max)" />
+    <Property Name="delivery_name" Type="nvarchar(max)" />
+    <Property Name="delivery_address" Type="nvarchar(max)" />
+    <Property Name="delivery_city" Type="nvarchar(max)" />
+    <Property Name="delivery_state" Type="nvarchar(max)" />
+    <Property Name="delivery_zip" Type="nvarchar(max)" />
+    <Property Name="delivery_country" Type="nvarchar(max)" />
+    <Property Name="delivery_tel" Type="nvarchar(max)" />
+    <Property Name="merchant_param1" Type="nvarchar(max)" />
+    <Property Name="merchant_param2" Type="nvarchar(max)" />
+    <Property Name="merchant_param3" Type="nvarchar(max)" />
+    <Property Name="merchant_param4" Type="nvarchar(max)" />
+    <Property Name="merchant_param5" Type="nvarchar(max)" />
+    <Property Name="vault" Type="nvarchar(max)" />
+    <Property Name="offer_type" Type="nvarchar(max)" />
+    <Property Name="offer_code" Type="nvarchar(max)" />
+    <Property Name="discount_value" Type="nvarchar(max)" />
+    <Property Name="mer_account" Type="nvarchar(max)" />
+    <Property Name="eci_value" Type="nvarchar(max)" />
+    <Property Name="retry" Type="nvarchar(max)" />
+    <Property Name="response_code" Type="nvarchar(max)" />
+    <Property Name="billing_notes" Type="nvarchar(max)" />
+    <Property Name="trans_date" Type="nvarchar(max)" />
+    <Property Name="bin_country" Type="nvarchar(max)" />
+    <Property Name="active" Type="int" />
+  </EntityType>
+  <EntityType Name="Tbl_Registration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Enrollment_No" Type="nvarchar(max)" />
+    <Property Name="ApplicationId" Type="nvarchar(max)" />
+    <Property Name="First_Name" Type="nvarchar(max)" />
+    <Property Name="Middle_Name" Type="nvarchar(max)" />
+    <Property Name="Last_Name" Type="nvarchar(max)" />
+    <Property Name="Mother_Name" Type="nvarchar(max)" />
+    <Property Name="Adhar_no" Type="nvarchar" MaxLength="12" />
+    <Property Name="Mobile_No" Type="nvarchar" MaxLength="10" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Village" Type="nvarchar(max)" />
+    <Property Name="District" Type="nvarchar(max)" />
+    <Property Name="Taluka" Type="nvarchar(max)" />
+    <Property Name="State" Type="nvarchar(max)" />
+    <Property Name="Pin_Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date_of_Birth" Type="nvarchar(max)" />
+    <Property Name="DOB_Words" Type="nvarchar(max)" />
+    <Property Name="DOB_Village" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOB_Taluka" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOB_District" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Standard" Type="nvarchar(max)" />
+    <Property Name="Medium" Type="nvarchar(max)" />
+    <Property Name="Age_Certified_Proof" Type="nvarchar(max)" />
+    <Property Name="District_Center" Type="nvarchar" MaxLength="50" />
+    <Property Name="Taluka_Center" Type="nvarchar" MaxLength="50" />
+    <Property Name="Center" Type="nvarchar(max)" />
+    <Property Name="Center_Code" Type="nvarchar(max)" />
+    <Property Name="Previous_Attend_School_YN" Type="nvarchar(max)" />
+    <Property Name="Self_Declaration_Not_Gone_School" Type="nvarchar(max)" />
+    <Property Name="Previous_Attend_School" Type="nvarchar(max)" />
+    <Property Name="Date_Of_Leaving_Last_Attended_School" Type="nvarchar(max)" />
+    <Property Name="Handicap" Type="nvarchar(max)" />
+    <Property Name="Candidate_Handicaped_YN" Type="nvarchar(max)" />
+    <Property Name="Subject_List" Type="nvarchar(max)" />
+    <Property Name="Subject1" Type="nvarchar(max)" />
+    <Property Name="Subject2" Type="nvarchar(max)" />
+    <Property Name="Subject3" Type="nvarchar(max)" />
+    <Property Name="Subject4" Type="nvarchar(max)" />
+    <Property Name="Subject5" Type="nvarchar(max)" />
+    <Property Name="Minority_Religion" Type="nvarchar(max)" />
+    <Property Name="Exam_Form_Disable" Type="nvarchar(max)" />
+    <Property Name="Type_Of_User" Type="nvarchar(max)" />
+    <Property Name="Nsqf_Subject" Type="nvarchar(max)" />
+    <Property Name="Hall_Ticket" Type="nvarchar(max)" />
+    <Property Name="Photo" Type="nvarchar(max)" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Signature" Type="nvarchar(max)" />
+    <Property Name="Payment_Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ec_Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="ip" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateNow" Type="datetime" />
+    <Property Name="Year_Id" Type="nvarchar" MaxLength="50" />
+    <Property Name="Reference_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Tbl_Registration_Pre">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Order_Id" Type="nvarchar(max)" />
+    <Property Name="UID" Type="nvarchar(max)" />
+    <Property Name="Enrollment_No" Type="nvarchar(max)" />
+    <Property Name="ApplicationId" Type="nvarchar(max)" />
+    <Property Name="First_Name" Type="nvarchar(max)" />
+    <Property Name="Middle_Name" Type="nvarchar(max)" />
+    <Property Name="Last_Name" Type="nvarchar(max)" />
+    <Property Name="Mother_Name" Type="nvarchar(max)" />
+    <Property Name="Adhar_no" Type="nvarchar" MaxLength="12" />
+    <Property Name="Mobile_No" Type="nvarchar" MaxLength="10" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Village" Type="nvarchar(max)" />
+    <Property Name="District" Type="nvarchar(max)" />
+    <Property Name="Taluka" Type="nvarchar(max)" />
+    <Property Name="State" Type="nvarchar(max)" />
+    <Property Name="Pin_Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date_of_Birth" Type="nvarchar(max)" />
+    <Property Name="DOB_Words" Type="nvarchar(max)" />
+    <Property Name="DOB_Village" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOB_Taluka" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOB_District" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Standard" Type="nvarchar(max)" />
+    <Property Name="Medium" Type="nvarchar(max)" />
+    <Property Name="Age_Certified_Proof" Type="nvarchar(max)" />
+    <Property Name="District_Center" Type="nvarchar" MaxLength="50" />
+    <Property Name="Taluka_Center" Type="nvarchar" MaxLength="50" />
+    <Property Name="Center" Type="nvarchar(max)" />
+    <Property Name="Center_Code" Type="nvarchar(max)" />
+    <Property Name="Previous_Attend_School_YN" Type="nvarchar(max)" />
+    <Property Name="Self_Declaration_Not_Gone_School" Type="nvarchar(max)" />
+    <Property Name="Previous_Attend_School" Type="nvarchar(max)" />
+    <Property Name="Date_Of_Leaving_Last_Attended_School" Type="nvarchar(max)" />
+    <Property Name="Handicap" Type="nvarchar(max)" />
+    <Property Name="Candidate_Handicaped_YN" Type="nvarchar(max)" />
+    <Property Name="Subject_List" Type="nvarchar(max)" />
+    <Property Name="Subject1" Type="nvarchar(max)" />
+    <Property Name="Subject2" Type="nvarchar(max)" />
+    <Property Name="Subject3" Type="nvarchar(max)" />
+    <Property Name="Subject4" Type="nvarchar(max)" />
+    <Property Name="Subject5" Type="nvarchar(max)" />
+    <Property Name="Minority_Religion" Type="nvarchar(max)" />
+    <Property Name="Exam_Form_Disable" Type="nvarchar(max)" />
+    <Property Name="Type_Of_User" Type="nvarchar(max)" />
+    <Property Name="Nsqf_Subject" Type="nvarchar(max)" />
+    <Property Name="Hall_Ticket" Type="nvarchar(max)" />
+    <Property Name="Photo" Type="nvarchar(max)" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Signature" Type="nvarchar(max)" />
+    <Property Name="Payment_Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ec_Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="ip" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateNow" Type="datetime" />
+    <Property Name="Year_Id" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_Site_Status">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Active_Status" Type="int" />
+    <Property Name="Start_Date" Type="date" />
+    <Property Name="Late_Date" Type="date" />
+    <Property Name="Type" Type="nvarchar(max)" />
+    <Property Name="RegisterEorD" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Db_Open_Schooling.dbo.Tbl_Subject' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Tbl_Subject">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Subject_Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Subject_Name" Type="nvarchar(max)" />
+    <Property Name="Subject_Group" Type="nvarchar" MaxLength="50" />
+    <Property Name="Handicaped" Type="nvarchar" MaxLength="50" />
+    <Property Name="Class" Type="nvarchar" MaxLength="50" />
+    <Property Name="sample2" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Function Name="Sp_Insert_Tbl_Pay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="int" Mode="In" />
+    <Parameter Name="First_Name" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="billing_city" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="billing_state" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="billing_tel" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="billing_email" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="merchant_param1" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="trans_date" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="Sp_Insert_Tbl_Regi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Adhar_no" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="DateNow" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <EntityContainer Name="Db_Open_SchoolingModelStoreContainer">
+    <EntitySet Name="Tbl_Application_Form" EntityType="Self.Tbl_Application_Form" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_payment" EntityType="Self.Tbl_payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Registration" EntityType="Self.Tbl_Registration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Registration_Pre" EntityType="Self.Tbl_Registration_Pre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Site_Status" EntityType="Self.Tbl_Site_Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="All_Taluka" EntityType="Self.All_Taluka" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [All_Taluka].[Id] AS [Id], 
+    [All_Taluka].[Taluka] AS [Taluka], 
+    [All_Taluka].[District] AS [District], 
+    [All_Taluka].[Division] AS [Division]
+    FROM [dbo].[All_Taluka] AS [All_Taluka]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Center_Login_Information" EntityType="Self.Center_Login_Information" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Center_Login_Information].[Id] AS [Id], 
+    [Center_Login_Information].[UDISE_No] AS [UDISE_No], 
+    [Center_Login_Information].[Center_Password] AS [Center_Password], 
+    [Center_Login_Information].[Division] AS [Division], 
+    [Center_Login_Information].[Div_Code] AS [Div_Code], 
+    [Center_Login_Information].[District] AS [District], 
+    [Center_Login_Information].[Taluka] AS [Taluka], 
+    [Center_Login_Information].[Contact_Center_Code] AS [Contact_Center_Code], 
+    [Center_Login_Information].[Center_Name] AS [Center_Name], 
+    [Center_Login_Information].[Contact] AS [Contact], 
+    [Center_Login_Information].[Medium] AS [Medium], 
+    [Center_Login_Information].[Active] AS [Active], 
+    [Center_Login_Information].[District_Code] AS [District_Code]
+    FROM [dbo].[Center_Login_Information] AS [Center_Login_Information]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Tbl_CenterList" EntityType="Self.Tbl_CenterList" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Tbl_CenterList].[Id] AS [Id], 
+    [Tbl_CenterList].[division] AS [division], 
+    [Tbl_CenterList].[div_code] AS [div_code], 
+    [Tbl_CenterList].[district] AS [district], 
+    [Tbl_CenterList].[taluka] AS [taluka], 
+    [Tbl_CenterList].[center_code] AS [center_code], 
+    [Tbl_CenterList].[center_name] AS [center_name], 
+    [Tbl_CenterList].[Medium] AS [Medium], 
+    [Tbl_CenterList].[active] AS [active]
+    FROM [dbo].[Tbl_CenterList] AS [Tbl_CenterList]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Tbl_District" EntityType="Self.Tbl_District" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Tbl_District].[Id] AS [Id], 
+    [Tbl_District].[District] AS [District], 
+    [Tbl_District].[DivCode] AS [DivCode]
+    FROM [dbo].[Tbl_District] AS [Tbl_District]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Tbl_OpenSch_Result" EntityType="Self.Tbl_OpenSch_Result" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Tbl_OpenSch_Result].[ID] AS [ID], 
+    [Tbl_OpenSch_Result].[Form_No] AS [Form_No], 
+    [Tbl_OpenSch_Result].[seatnumber] AS [seatnumber], 
+    [Tbl_OpenSch_Result].[STD] AS [STD], 
+    [Tbl_OpenSch_Result].[Name] AS [Name], 
+    [Tbl_OpenSch_Result].[Sub1] AS [Sub1], 
+    [Tbl_OpenSch_Result].[Marks1] AS [Marks1], 
+    [Tbl_OpenSch_Result].[Sub2] AS [Sub2], 
+    [Tbl_OpenSch_Result].[Marks2] AS [Marks2], 
+    [Tbl_OpenSch_Result].[Sub3] AS [Sub3], 
+    [Tbl_OpenSch_Result].[Marks3] AS [Marks3], 
+    [Tbl_OpenSch_Result].[Sub4] AS [Sub4], 
+    [Tbl_OpenSch_Result].[Marks4] AS [Marks4], 
+    [Tbl_OpenSch_Result].[Sub5] AS [Sub5], 
+    [Tbl_OpenSch_Result].[Marks5] AS [Marks5], 
+    [Tbl_OpenSch_Result].[REMARKS] AS [REMARKS], 
+    [Tbl_OpenSch_Result].[Mother_Name] AS [Mother_Name], 
+    [Tbl_OpenSch_Result].[Division] AS [Division]
+    FROM [dbo].[Tbl_OpenSch_Result] AS [Tbl_OpenSch_Result]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Tbl_Subject" EntityType="Self.Tbl_Subject" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Tbl_Subject].[Id] AS [Id], 
+    [Tbl_Subject].[Subject_Code] AS [Subject_Code], 
+    [Tbl_Subject].[Subject_Name] AS [Subject_Name], 
+    [Tbl_Subject].[Subject_Group] AS [Subject_Group], 
+    [Tbl_Subject].[Handicaped] AS [Handicaped], 
+    [Tbl_Subject].[Class] AS [Class], 
+    [Tbl_Subject].[sample2] AS [sample2]
+    FROM [dbo].[Tbl_Subject] AS [Tbl_Subject]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

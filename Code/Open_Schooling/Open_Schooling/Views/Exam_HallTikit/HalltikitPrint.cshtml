@@ -1,0 +1,313 @@
+﻿@model Open_Schooling.Models.Tbl_Registration
+@{
+    ViewBag.Title = "HalltikitPrint";
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="~/Design/CSS/sitep.css" rel="stylesheet" />
+    <link href="~/Design/CSS/StyleP.css" rel="stylesheet" />
+    <style type="text/css">
+        .auto-style1 {
+            width: 130px;
+        }
+
+        .auto-style2 {
+            width: 98px;
+        }
+
+        .auto-style3 {
+            width: 129px;
+        }
+
+        .auto-style4 {
+            width: 99px;
+        }
+
+        .auto-style5 {
+            font-size: small;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="book">
+
+            <div class="page">
+                <div class="subpage">
+
+                    <table style="width: 100%; font-weight: bold; height: 70px; padding-top: 10px; line-height: 25px; border-left-style: solid; border-left-color: inherit; border-left-width: 1px; border-right-style: solid; border-right-color: inherit; border-right-width: 1px; border-top-style: solid; border-top-color: inherit; border-top-width: 1px;">
+                        <tr>
+                            <td align="left" class="style5" valign="top" style="padding-left: 5px; text-align: center; font-size: medium; padding-top:15px;">
+                                <img src="~/Design/Images/MSBSHSE-LOGO.png" style="float: left; height: 100px; width: 103px;" />
+                                <br />
+                            </td>
+                            <td align="center" class="style27" valign="top" style="padding-right: 20px; text-align: center; font-size: medium; padding-top: 10px;">
+                                MAHARASHTRA STATE BOARD OF OPEN SCHOOLING, PUNE
+                                <br />
+                                <span class="auto-style5">
+                                    ADMISSION CARD FOR EVALUATION OF December - January - 2022 (STD - @Html.DisplayFor(model => model.Standard))
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                    <div style="border: 1px solid black; padding-top: 10px;">
+                        <table border="0" cellspacing="2" cellpading="6" style="width: 101%; line-height: 20px;">
+                            <tr>
+
+                                <td colspan="4">
+                                    <div>
+                                        <div style="width: 70%; float: left">
+                                            <table>
+                                                <tr>
+                                                    <td style="padding-left: 10px; font-weight: bold;" class="auto-style1">
+                                                        Divisional Board
+                                                        <Label Text=":" Style="padding-left: 5px;"></Label>
+                                                    </td>
+                                                    <td style="padding-left: 10px; font-weight: bold;" class="auto-style3">
+                                                        @*@ViewBag["Division"]*@
+                                                        @Session["Division"].ToString()
+                                                    </td>
+                                                    <td style="padding-left: 10px; font-weight: bold;" class="auto-style4">
+                                                        Center No
+                                                        <Label Text=":" Style="padding-left: 20px;"></Label>
+                                                    </td>
+                                                    <td style="padding-left: 10px; font-weight: bold;" class="auto-style6">
+                                                        @*@ViewBag["Center_Code"]*@
+                                                        @Session["Center_Code"].ToString()
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-left: 10px; font-weight: bold;" class="auto-style1">
+                                                        Seat No
+                                                        <Label Text=":" Style="padding-left: 59px;"></Label>
+                                                    </td>
+                                                    <td style="padding-left: 10px; font-weight: bold; text-align: left;">
+                                                        @Html.DisplayFor(model => model.Seat_No)
+                                                    </td>
+                                                    <td style="padding-left: 10px; font-weight: bold;" class="auto-style2">Type of Candidate </td>
+                                                    <td style="padding-left: 10px; font-weight: bold; text-align: left;" class="auto-style6">
+                                                        @Html.DisplayFor(model => model.Type_Of_User)
+                                                        @*@Session["ss"].ToString()*@
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-left: 10px; font-weight: bold;" class="auto-style1">
+                                                        Seat No (In Word)
+                                                        <Label Text=":" Style="padding-left: 2px;"></Label>
+                                                    </td>
+                                                    <td style="padding-left: 10px; font-weight: bold;" colspan="4">
+                                                        @ViewData["Class"]
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-left: 10px; font-weight: bold;" class="auto-style1">
+                                                        Medium
+                                                        <Label Text=":" Style="padding-left: 59px;"></Label>
+                                                    </td>
+                                                    <td style="padding-left: 10px; font-weight: bold;" class="auto-style3">
+                                                        @Html.DisplayFor(model => model.Medium)
+                                                    </td>
+                                                    <td style="padding-left: 10px; font-weight: bold;" class="auto-style4">Divyang Type </td>
+                                                    <td style="padding-left: 10px; font-weight: bold;" class="auto-style6">
+                                                        @Html.DisplayFor(model => model.Handicap)
+                                                    </td>
+
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="padding-left: 10px; font-weight: bold;" class="auto-style1">
+                                                        Birth Date
+
+                                                    </td>
+                                                    <td style="padding-left: 10px; font-weight: bold;" class="auto-style3">
+                                                        @Html.DisplayFor(model => model.Date_of_Birth)
+                                                    </td>
+                                                    <td style="padding-left: 10px; font-weight: bold;" class="auto-style4">
+                                                        Birth Place
+                                                    </td>
+                                                    <td style="padding-left: 10px; font-weight: bold;" class="auto-style6">
+                                                        @Html.DisplayFor(model => model.DOB_Village)
+                                                    </td>
+
+                                                </tr>
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 10px; font-weight: bold;" class="auto-style1">
+                                    Name
+                                    <Label Text=":" Style="padding-left: 75px;"></Label>
+                                </td>
+                                <td style="padding-left: 10px; font-weight: bold;" class="auto-style3">
+                                    @Html.DisplayFor(model => model.First_Name)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 10px; font-weight: bold;" class="auto-style1">
+                                    Mother's Name
+                                    <Label Text=":" Style="padding-left: 19px;"></Label>
+                                </td>
+                                <td style="padding-left: 10px; font-weight: bold;" class="auto-style3">
+                                    @Html.DisplayFor(model => model.Mother_Name)
+                                </td>
+                                <td style="padding-left: 10px; font-weight: bold;" class="auto-style4">
+                                    Gender
+                                    <Label Text=":" Style="padding-left: 41px;"></Label>
+                                </td>
+                                <td style="padding-left: 10px; font-weight: bold;" class="auto-style6">
+                                    @Html.DisplayFor(model => model.Gender)
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="padding-left: 10px; font-weight: bold;" class="auto-style1">
+                                    Center Name
+                                    <Label Text=":" Style="padding-left: 31px;"></Label>
+                                </td>
+                                <td style="padding-left: 10px; font-weight: bold;" colspan="4">
+                                    @*@Html.DisplayFor(model => model.center)*@
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="6">
+                                    <div style="width: 100%; padding-top: 5px; padding-left: 10px;">
+                                        <div style="width: 77%; float: left;">
+                                            <table border="1" style="width: 100%; " cellspacing="0" cellpading="0">
+                                                <tr>
+                                                    <td style="padding-left: 10px; font-weight: bold; line-height: 12px; padding-top: 5px; width: 70px">Subject Code</td>
+                                                    <td style="padding-left: 10px; font-weight: bold; line-height: 12px; padding-top: 5px; text-align: left">Subject Name</td>
+                                                    <td style="padding-left: 10px; font-weight: bold; line-height: 12px; padding-top: 5px; width: 80px">Language of answer</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-left: 10px; font-weight: bold;">
+                                                        @Html.DisplayFor(model => model.Subject1)
+                                                    </td>
+                                                    <td style="padding-left: 10px; font-weight: bold;">
+
+                                                        @TempData["sub1"].ToString()
+                                                    </td>
+                                                    <td style="padding-left: 10px; font-weight: bold;">
+                                                        @Html.DisplayFor(model => model.Medium)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-left: 10px; font-weight: bold;">
+                                                        @Html.DisplayFor(model => model.Subject2)
+                                                    </td>
+                                                    <td style="padding-left: 10px; font-weight: bold;">
+                                                        @TempData["sub2"].ToString()
+                                                    </td>
+                                                    <td style="padding-left: 10px; font-weight: bold;">
+                                                        @Html.DisplayFor(model => model.Medium)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-left: 10px; font-weight: bold;">
+                                                        @Html.DisplayFor(model => model.Subject3)
+                                                    </td>
+                                                    <td style="padding-left: 10px; font-weight: bold;">
+                                                        @TempData["sub3"].ToString()
+                                                    </td>
+                                                    <td style="padding-left: 10px; font-weight: bold;">
+                                                        @Html.DisplayFor(model => model.Medium)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-left: 10px; font-weight: bold;">
+                                                        @Html.DisplayFor(model => model.Subject4)
+                                                    </td>
+                                                    <td style="padding-left: 10px; font-weight: bold;">
+                                                        @TempData["sub4"].ToString()
+                                                    </td>
+                                                    <td style="padding-left: 10px; font-weight: bold;">
+                                                        @Html.DisplayFor(model => model.Medium)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-left: 10px; font-weight: bold;">
+                                                        @Html.DisplayFor(model => model.Subject5)
+                                                    </td>
+                                                    <td style="padding-left: 10px; font-weight: bold;">
+                                                        @TempData["sub5"].ToString()
+                                                    </td>
+                                                    <td style="padding-left: 10px; font-weight: bold;">
+                                                        @Html.DisplayFor(model => model.Medium)
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div style="width: 23%; float: right; height: 200px">
+                                            <div style="width: 80%; height: 100px; border: 0px solid black; margin-left: 23px; text-align: center;">
+
+                                                <img src="@Model.Photo" alt="Sample Image" style="height:117px;width:110px;" />
+                                            </div>
+                                            <div style="width: 100%; height: 30px; border: 0px solid black; margin-top: 5px; text-align: center;">
+                                                <img src="@Model.Signature" alt="Sample Image" Style="margin-left: 0px;height:30px;width:152px" />
+                                                <br />
+                                                <br />
+                                                <br />
+                                                <div style="width: 100%; height: 30px; border: 0px solid black; text-align: center; font-size: x-small;">Sign of Head of School & Stamp</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <div>
+                            <table cellspacing="2" cellpading="6" style="width: 100%; line-height: 25px;">
+                                <tr>
+                                    <td colspan="4" style="padding-left: 10px; font-weight: bold; font-size: small; margin-top: 10px; line-height: 15px; padding-top: 5px;">
+                                        Note:
+                                        <span>
+                                            Candidate must preserve and produce this card at each part of evaluation. Without which admission to the evaluation may be
+                                        </span><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span>
+                                            disallowed. Visit http://msbos.mh-ssc.ac.in for other details.
+                                        </span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table cellspacing="2" cellpading="6" style="width: 100%; line-height: 25px; border-top: 1px solid black">
+                                <tr>
+                                    <td colspan="4" style="padding-left: 10px; font-weight: bold; font-size: small; border-bottom: 1px solid black; padding-top: 2px; text-align: center">
+                                        मूल्यमापन प्रक्रियेसाठी पालन करावयाच्या सूचना   INSTRUCTIONS TO BE FOLLOWED FOR EVALUATION
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-left: 10px; font-size: small; border-bottom: 1px solid black; line-height: 17px;">
+                                        १) मूल्यमापन प्रक्रिया सुरू होण्यापूर्वी एक दिवस अगोदर परीक्षार्थ्याने, परीक्षा केंद्र , म्हणजेच ज्या ठिकाणी आपले मूल्यमापन होणार आहे तिथे  जाऊन माहिती घ्यावी.  candidate should visit and confirm, one day prior to the commencing of the evaluation, about the evaluation Centre, and where his/her Seat Number is alloted.
+                                        <br />
+                                        २) उमेदवाराने  मूल्यमापन प्रक्रियेसाठी वेळापत्रकानुसार उपस्थित असणे आवश्यक आहे. A candidate must be present for evaluation as per schedule.
+                                        <br />
+                                        ३) उमेदवार खालीलपैकी कोणत्याही कारणाने कारवाईस पात्र राहील. (अ) - पुस्तक , वही , कच्चे काम केलेला कागद किंवा त्यासाठीचा कागद , मोबाइल, डिजिटल घड्याळ , कॅलकयूलेटर किंवा इतर इलेक्ट्रॉनिक उपकरण , इत्यादी जवळ बाळगल्यास  (ब)- मूल्यमापन प्रक्रियेदरम्यान इतर उमेदवाराशी बोलल्यास अथवा संपर्क केल्यास (क)- मूल्यमापन प्रक्रियेच्या संबंधित दस्ताऐवज स्वत:बरोबर घेऊन जाण्याचा प्रयत्न केल्यास (ड)- केंद्रसंचालक/ पर्यवेक्षक यांनी केलेल्या सूचनांचे पालन न केल्यास Candidate can be punished if (a) they bring any books, note books, a piece of paper with scribbling or a piece of paper for the purpose, Mobile, Digital Watch, Calculator or any other electonic device, etc (b) they speak or communicate with any other candidate/s during the period of the examination (c) they try to curry Answer Book or a Supplement along with them (d) they disobey any instruction issued by the conductor/the invigilator.
+                                        <br />
+                                        ४) उमेदवारास मूल्यमापन काळात केंद्र सोडून बाहेर जाता येणार नाही. अपवादात्मक परिस्थितीत केंद्रातून बाहेर जाण्याची संमती दिल्यास तत्सम दस्ताऐवज पर्यवेक्षकाकडे जमा करावे लागतील. Candidate will not be allowed to leave the examination hall during the examination. However, in exceptional cases if a candidate is allowed to leave the examination hall he/she will have to submit the Answer Book & Question Paper to the invigilator.
+                                        <br />
+
+                                        ५) उमेदवाराने त्यांना देण्यात आलेल्या प्रत्येक उत्तरपत्रिकेवर , पुरवणीवर व तत्सम साहित्यावर आपला बैठक क्रमांक (अंकी व अक्षरी ) विहित जागेत लिहावा.  Write your seat Number (in Figure and in Words) on every Answer Book,Supplement and other related material issued to you in the space provided for the purpose.
+                                        <br />
+                                        ६) उमेदवाराने मूल्यमापन प्रक्रियेशी संबंधीत सर्व सूचना वाचून त्याचे काटेकोरपणे पालन करावे. The candidate must read all instructions regarding Evaluation and follow them carefully.
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+
+

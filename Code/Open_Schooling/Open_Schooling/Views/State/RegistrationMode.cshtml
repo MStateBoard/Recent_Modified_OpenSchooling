@@ -1,0 +1,68 @@
+﻿@model Open_Schooling.Models.State_Login_Model
+@{
+    ViewBag.Title = "RegistrationMode";
+    Layout = "~/Views/Shared/StateLayout.cshtml";
+}
+
+<h1></h1>
+<div class="container">
+    <center>
+        <h3>Registration Mode</h3>
+    </center> 
+    <div style="height:25px;"></div>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-md-2">
+            <label>Enable Or Disable Registration Page</label> 
+        </div>
+        <div class="col-md-2">
+            Enable
+            @Html.RadioButtonFor(model => model.RegisterEorD, "Enable" ,new { @name= "RegisterEorD", @id= "RegisterEorD" })
+            Disable
+            @Html.RadioButtonFor(model => model.RegisterEorD, "Disable", new { @name = "RegisterEorD", @id = "RegisterEorD" })
+        </div>
+    </div>
+
+    <br /><br />
+         
+              <center>
+                  <input type="button" id="btn_submit" class="btn btn-block btn-primary btn-lg font-weight-bolder auth-form-btn" value="SUBMIT"  style="background-color: #3eadcf;font-weight:bold">
+              </center>
+         
+    </div>
+
+<script>
+    $("#btn_submit").click(function (e) {
+        var dataa = $('input[name="RegisterEorD"]:checked').val();
+        debugger
+       
+        $.ajax({
+            url: "../State/RegistrationMode",
+            type: "post",
+            data: { id: dataa
+        },
+            //processData: false,
+            //contentType: false,
+            beforeSend: function () {
+                Showloader();
+            },
+            complete: function () {
+                Hideloader();
+            },
+            success: function (Data) {
+                debugger
+                if (Data.Result) {
+                   
+                }
+                else {
+                    Error_Alert(Data.Response);
+                }
+
+            },
+            error: function (e1, e2, e3) {
+                /* Error_Alert(Data.Response);*/
+            }
+        });
+        /* }*/
+    })
+</script>

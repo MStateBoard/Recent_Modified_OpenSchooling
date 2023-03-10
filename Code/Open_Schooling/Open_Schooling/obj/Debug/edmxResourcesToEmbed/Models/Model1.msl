@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Db_Open_SchoolingModelStoreContainer" CdmEntityContainer="Db_Open_SchoolingEntities">
+    <EntitySetMapping Name="All_Taluka">
+      <EntityTypeMapping TypeName="Db_Open_SchoolingModel.All_Taluka">
+        <MappingFragment StoreEntitySet="All_Taluka">
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="Taluka" ColumnName="Taluka" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Center_Login_Information">
+      <EntityTypeMapping TypeName="Db_Open_SchoolingModel.Center_Login_Information">
+        <MappingFragment StoreEntitySet="Center_Login_Information">
+          <ScalarProperty Name="District_Code" ColumnName="District_Code" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Medium" ColumnName="Medium" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Center_Name" ColumnName="Center_Name" />
+          <ScalarProperty Name="Contact_Center_Code" ColumnName="Contact_Center_Code" />
+          <ScalarProperty Name="Taluka" ColumnName="Taluka" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="Div_Code" ColumnName="Div_Code" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="Center_Password" ColumnName="Center_Password" />
+          <ScalarProperty Name="UDISE_No" ColumnName="UDISE_No" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_District">
+      <EntityTypeMapping TypeName="Db_Open_SchoolingModel.Tbl_District">
+        <MappingFragment StoreEntitySet="Tbl_District">
+          <ScalarProperty Name="DivCode" ColumnName="DivCode" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Subject">
+      <EntityTypeMapping TypeName="Db_Open_SchoolingModel.Tbl_Subject">
+        <MappingFragment StoreEntitySet="Tbl_Subject">
+          <ScalarProperty Name="sample2" ColumnName="sample2" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+          <ScalarProperty Name="Handicaped" ColumnName="Handicaped" />
+          <ScalarProperty Name="Subject_Group" ColumnName="Subject_Group" />
+          <ScalarProperty Name="Subject_Name" ColumnName="Subject_Name" />
+          <ScalarProperty Name="Subject_Code" ColumnName="Subject_Code" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_CenterList">
+      <EntityTypeMapping TypeName="Db_Open_SchoolingModel.Tbl_CenterList">
+        <MappingFragment StoreEntitySet="Tbl_CenterList">
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="Medium" ColumnName="Medium" />
+          <ScalarProperty Name="center_name" ColumnName="center_name" />
+          <ScalarProperty Name="center_code" ColumnName="center_code" />
+          <ScalarProperty Name="taluka" ColumnName="taluka" />
+          <ScalarProperty Name="district" ColumnName="district" />
+          <ScalarProperty Name="div_code" ColumnName="div_code" />
+          <ScalarProperty Name="division" ColumnName="division" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Registration">
+      <EntityTypeMapping TypeName="Db_Open_SchoolingModel.Tbl_Registration">
+        <MappingFragment StoreEntitySet="Tbl_Registration">
+          <ScalarProperty Name="Reference_Id" ColumnName="Reference_Id" />
+          <ScalarProperty Name="Year_Id" ColumnName="Year_Id" />
+          <ScalarProperty Name="DateNow" ColumnName="DateNow" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="Ec_Status" ColumnName="Ec_Status" />
+          <ScalarProperty Name="Payment_Status" ColumnName="Payment_Status" />
+          <ScalarProperty Name="Signature" ColumnName="Signature" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Hall_Ticket" ColumnName="Hall_Ticket" />
+          <ScalarProperty Name="Nsqf_Subject" ColumnName="Nsqf_Subject" />
+          <ScalarProperty Name="Type_Of_User" ColumnName="Type_Of_User" />
+          <ScalarProperty Name="Exam_Form_Disable" ColumnName="Exam_Form_Disable" />
+          <ScalarProperty Name="Minority_Religion" ColumnName="Minority_Religion" />
+          <ScalarProperty Name="Subject5" ColumnName="Subject5" />
+          <ScalarProperty Name="Subject4" ColumnName="Subject4" />
+          <ScalarProperty Name="Subject3" ColumnName="Subject3" />
+          <ScalarProperty Name="Subject2" ColumnName="Subject2" />
+          <ScalarProperty Name="Subject1" ColumnName="Subject1" />
+          <ScalarProperty Name="Subject_List" ColumnName="Subject_List" />
+          <ScalarProperty Name="Candidate_Handicaped_YN" ColumnName="Candidate_Handicaped_YN" />
+          <ScalarProperty Name="Handicap" ColumnName="Handicap" />
+          <ScalarProperty Name="Date_Of_Leaving_Last_Attended_School" ColumnName="Date_Of_Leaving_Last_Attended_School" />
+          <ScalarProperty Name="Previous_Attend_School" ColumnName="Previous_Attend_School" />
+          <ScalarProperty Name="Self_Declaration_Not_Gone_School" ColumnName="Self_Declaration_Not_Gone_School" />
+          <ScalarProperty Name="Previous_Attend_School_YN" ColumnName="Previous_Attend_School_YN" />
+          <ScalarProperty Name="Center_Code" ColumnName="Center_Code" />
+          <ScalarProperty Name="Center" ColumnName="Center" />
+          <ScalarProperty Name="Taluka_Center" ColumnName="Taluka_Center" />
+          <ScalarProperty Name="District_Center" ColumnName="District_Center" />
+          <ScalarProperty Name="Age_Certified_Proof" ColumnName="Age_Certified_Proof" />
+          <ScalarProperty Name="Medium" ColumnName="Medium" />
+          <ScalarProperty Name="Standard" ColumnName="Standard" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DOB_District" ColumnName="DOB_District" />
+          <ScalarProperty Name="DOB_Taluka" ColumnName="DOB_Taluka" />
+          <ScalarProperty Name="DOB_Village" ColumnName="DOB_Village" />
+          <ScalarProperty Name="DOB_Words" ColumnName="DOB_Words" />
+          <ScalarProperty Name="Date_of_Birth" ColumnName="Date_of_Birth" />
+          <ScalarProperty Name="Pin_Code" ColumnName="Pin_Code" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Taluka" ColumnName="Taluka" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="Village" ColumnName="Village" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Mobile_No" ColumnName="Mobile_No" />
+          <ScalarProperty Name="Adhar_no" ColumnName="Adhar_no" />
+          <ScalarProperty Name="Mother_Name" ColumnName="Mother_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Middle_Name" ColumnName="Middle_Name" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="Enrollment_No" ColumnName="Enrollment_No" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_payment">
+      <EntityTypeMapping TypeName="Db_Open_SchoolingModel.Tbl_payment">
+        <MappingFragment StoreEntitySet="Tbl_payment">
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="bin_country" ColumnName="bin_country" />
+          <ScalarProperty Name="trans_date" ColumnName="trans_date" />
+          <ScalarProperty Name="billing_notes" ColumnName="billing_notes" />
+          <ScalarProperty Name="response_code" ColumnName="response_code" />
+          <ScalarProperty Name="retry" ColumnName="retry" />
+          <ScalarProperty Name="eci_value" ColumnName="eci_value" />
+          <ScalarProperty Name="mer_account" ColumnName="mer_account" />
+          <ScalarProperty Name="discount_value" ColumnName="discount_value" />
+          <ScalarProperty Name="offer_code" ColumnName="offer_code" />
+          <ScalarProperty Name="offer_type" ColumnName="offer_type" />
+          <ScalarProperty Name="vault" ColumnName="vault" />
+          <ScalarProperty Name="merchant_param5" ColumnName="merchant_param5" />
+          <ScalarProperty Name="merchant_param4" ColumnName="merchant_param4" />
+          <ScalarProperty Name="merchant_param3" ColumnName="merchant_param3" />
+          <ScalarProperty Name="merchant_param2" ColumnName="merchant_param2" />
+          <ScalarProperty Name="merchant_param1" ColumnName="merchant_param1" />
+          <ScalarProperty Name="delivery_tel" ColumnName="delivery_tel" />
+          <ScalarProperty Name="delivery_country" ColumnName="delivery_country" />
+          <ScalarProperty Name="delivery_zip" ColumnName="delivery_zip" />
+          <ScalarProperty Name="delivery_state" ColumnName="delivery_state" />
+          <ScalarProperty Name="delivery_city" ColumnName="delivery_city" />
+          <ScalarProperty Name="delivery_address" ColumnName="delivery_address" />
+          <ScalarProperty Name="delivery_name" ColumnName="delivery_name" />
+          <ScalarProperty Name="billing_email" ColumnName="billing_email" />
+          <ScalarProperty Name="billing_tel" ColumnName="billing_tel" />
+          <ScalarProperty Name="billing_country" ColumnName="billing_country" />
+          <ScalarProperty Name="billing_zip" ColumnName="billing_zip" />
+          <ScalarProperty Name="billing_state" ColumnName="billing_state" />
+          <ScalarProperty Name="billing_city" ColumnName="billing_city" />
+          <ScalarProperty Name="billing_address" ColumnName="billing_address" />
+          <ScalarProperty Name="billing_name" ColumnName="billing_name" />
+          <ScalarProperty Name="amount_money" ColumnName="amount_money" />
+          <ScalarProperty Name="currency" ColumnName="currency" />
+          <ScalarProperty Name="status_message" ColumnName="status_message" />
+          <ScalarProperty Name="status_code" ColumnName="status_code" />
+          <ScalarProperty Name="card_name" ColumnName="card_name" />
+          <ScalarProperty Name="payment_mode" ColumnName="payment_mode" />
+          <ScalarProperty Name="failure_message" ColumnName="failure_message" />
+          <ScalarProperty Name="order_status" ColumnName="order_status" />
+          <ScalarProperty Name="bank_ref_no" ColumnName="bank_ref_no" />
+          <ScalarProperty Name="tracking_id" ColumnName="tracking_id" />
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Registration_Pre">
+      <EntityTypeMapping TypeName="Db_Open_SchoolingModel.Tbl_Registration_Pre">
+        <MappingFragment StoreEntitySet="Tbl_Registration_Pre">
+          <ScalarProperty Name="Year_Id" ColumnName="Year_Id" />
+          <ScalarProperty Name="DateNow" ColumnName="DateNow" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="Ec_Status" ColumnName="Ec_Status" />
+          <ScalarProperty Name="Payment_Status" ColumnName="Payment_Status" />
+          <ScalarProperty Name="Signature" ColumnName="Signature" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Hall_Ticket" ColumnName="Hall_Ticket" />
+          <ScalarProperty Name="Nsqf_Subject" ColumnName="Nsqf_Subject" />
+          <ScalarProperty Name="Type_Of_User" ColumnName="Type_Of_User" />
+          <ScalarProperty Name="Exam_Form_Disable" ColumnName="Exam_Form_Disable" />
+          <ScalarProperty Name="Minority_Religion" ColumnName="Minority_Religion" />
+          <ScalarProperty Name="Subject5" ColumnName="Subject5" />
+          <ScalarProperty Name="Subject4" ColumnName="Subject4" />
+          <ScalarProperty Name="Subject3" ColumnName="Subject3" />
+          <ScalarProperty Name="Subject2" ColumnName="Subject2" />
+          <ScalarProperty Name="Subject1" ColumnName="Subject1" />
+          <ScalarProperty Name="Subject_List" ColumnName="Subject_List" />
+          <ScalarProperty Name="Candidate_Handicaped_YN" ColumnName="Candidate_Handicaped_YN" />
+          <ScalarProperty Name="Handicap" ColumnName="Handicap" />
+          <ScalarProperty Name="Date_Of_Leaving_Last_Attended_School" ColumnName="Date_Of_Leaving_Last_Attended_School" />
+          <ScalarProperty Name="Previous_Attend_School" ColumnName="Previous_Attend_School" />
+          <ScalarProperty Name="Self_Declaration_Not_Gone_School" ColumnName="Self_Declaration_Not_Gone_School" />
+          <ScalarProperty Name="Previous_Attend_School_YN" ColumnName="Previous_Attend_School_YN" />
+          <ScalarProperty Name="Center_Code" ColumnName="Center_Code" />
+          <ScalarProperty Name="Center" ColumnName="Center" />
+          <ScalarProperty Name="Taluka_Center" ColumnName="Taluka_Center" />
+          <ScalarProperty Name="District_Center" ColumnName="District_Center" />
+          <ScalarProperty Name="Age_Certified_Proof" ColumnName="Age_Certified_Proof" />
+          <ScalarProperty Name="Medium" ColumnName="Medium" />
+          <ScalarProperty Name="Standard" ColumnName="Standard" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DOB_District" ColumnName="DOB_District" />
+          <ScalarProperty Name="DOB_Taluka" ColumnName="DOB_Taluka" />
+          <ScalarProperty Name="DOB_Village" ColumnName="DOB_Village" />
+          <ScalarProperty Name="DOB_Words" ColumnName="DOB_Words" />
+          <ScalarProperty Name="Date_of_Birth" ColumnName="Date_of_Birth" />
+          <ScalarProperty Name="Pin_Code" ColumnName="Pin_Code" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Taluka" ColumnName="Taluka" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="Village" ColumnName="Village" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Mobile_No" ColumnName="Mobile_No" />
+          <ScalarProperty Name="Adhar_no" ColumnName="Adhar_no" />
+          <ScalarProperty Name="Mother_Name" ColumnName="Mother_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Middle_Name" ColumnName="Middle_Name" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="Enrollment_No" ColumnName="Enrollment_No" />
+          <ScalarProperty Name="UID" ColumnName="UID" />
+          <ScalarProperty Name="Order_Id" ColumnName="Order_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Application_Form">
+      <EntityTypeMapping TypeName="Db_Open_SchoolingModel.Tbl_Application_Form">
+        <MappingFragment StoreEntitySet="Tbl_Application_Form">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Signature" ColumnName="Signature" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="DateNow" ColumnName="DateNow" />
+          <ScalarProperty Name="Ip" ColumnName="Ip" />
+          <ScalarProperty Name="Year_Id" ColumnName="Year_Id" />
+          <ScalarProperty Name="Seat_No" ColumnName="Seat_No" />
+          <ScalarProperty Name="LastExamSeatNo" ColumnName="LastExamSeatNo" />
+          <ScalarProperty Name="LastExamYear" ColumnName="LastExamYear" />
+          <ScalarProperty Name="EC_Number" ColumnName="EC_Number" />
+          <ScalarProperty Name="EC_Year" ColumnName="EC_Year" />
+          <ScalarProperty Name="Subject5" ColumnName="Subject5" />
+          <ScalarProperty Name="Subject4" ColumnName="Subject4" />
+          <ScalarProperty Name="Subject3" ColumnName="Subject3" />
+          <ScalarProperty Name="Subject2" ColumnName="Subject2" />
+          <ScalarProperty Name="Subject1" ColumnName="Subject1" />
+          <ScalarProperty Name="Subjects" ColumnName="Subjects" />
+          <ScalarProperty Name="Type_Of_User" ColumnName="Type_Of_User" />
+          <ScalarProperty Name="Medium" ColumnName="Medium" />
+          <ScalarProperty Name="Divyang" ColumnName="Divyang" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Minority_Religion" ColumnName="Minority_Religion" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Adhar_no" ColumnName="Adhar_no" />
+          <ScalarProperty Name="Date_of_birth" ColumnName="Date_of_birth" />
+          <ScalarProperty Name="Place_of_birth" ColumnName="Place_of_birth" />
+          <ScalarProperty Name="Mobile_no" ColumnName="Mobile_no" />
+          <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Mother_name" ColumnName="Mother_name" />
+          <ScalarProperty Name="Middle_name" ColumnName="Middle_name" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Last_name" ColumnName="Last_name" />
+          <ScalarProperty Name="Contact_center" ColumnName="Contact_center" />
+          <ScalarProperty Name="UDISE_No" ColumnName="UDISE_No" />
+          <ScalarProperty Name="Form_No" ColumnName="Form_No" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_OpenSch_Result">
+      <EntityTypeMapping TypeName="Db_Open_SchoolingModel.Tbl_OpenSch_Result">
+        <MappingFragment StoreEntitySet="Tbl_OpenSch_Result">
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="Mother_Name" ColumnName="Mother_Name" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+          <ScalarProperty Name="Marks5" ColumnName="Marks5" />
+          <ScalarProperty Name="Sub5" ColumnName="Sub5" />
+          <ScalarProperty Name="Marks4" ColumnName="Marks4" />
+          <ScalarProperty Name="Sub4" ColumnName="Sub4" />
+          <ScalarProperty Name="Marks3" ColumnName="Marks3" />
+          <ScalarProperty Name="Sub3" ColumnName="Sub3" />
+          <ScalarProperty Name="Marks2" ColumnName="Marks2" />
+          <ScalarProperty Name="Sub2" ColumnName="Sub2" />
+          <ScalarProperty Name="Marks1" ColumnName="Marks1" />
+          <ScalarProperty Name="Sub1" ColumnName="Sub1" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="STD" ColumnName="STD" />
+          <ScalarProperty Name="seatnumber" ColumnName="seatnumber" />
+          <ScalarProperty Name="Form_No" ColumnName="Form_No" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Site_Status">
+      <EntityTypeMapping TypeName="Db_Open_SchoolingModel.Tbl_Site_Status">
+        <MappingFragment StoreEntitySet="Tbl_Site_Status">
+          <ScalarProperty Name="RegisterEorD" ColumnName="RegisterEorD" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Late_Date" ColumnName="Late_Date" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+          <ScalarProperty Name="Active_Status" ColumnName="Active_Status" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Sp_Insert_Tbl_Pay" FunctionName="Db_Open_SchoolingModel.Store.Sp_Insert_Tbl_Pay" />
+    <FunctionImportMapping FunctionImportName="Sp_Insert_Tbl_Regi" FunctionName="Db_Open_SchoolingModel.Store.Sp_Insert_Tbl_Regi" />
+  </EntityContainerMapping>
+</Mapping>

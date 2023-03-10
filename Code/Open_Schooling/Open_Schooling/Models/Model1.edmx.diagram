@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="13a3edbe400f4c6c83fa0605afbc315c" Name="Diagram1" ZoomLevel="38">
+        <EntityTypeShape EntityType="Db_Open_SchoolingModel.All_Taluka" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Db_Open_SchoolingModel.Center_Login_Information" Width="1.5" PointX="5.375" PointY="3.75" />
+        <EntityTypeShape EntityType="Db_Open_SchoolingModel.Tbl_District" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Db_Open_SchoolingModel.Tbl_Subject" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Db_Open_SchoolingModel.Tbl_CenterList" Width="1.5" PointX="9.375" PointY="4.75" />
+        <EntityTypeShape EntityType="Db_Open_SchoolingModel.Tbl_Registration" Width="1.5" PointX="9.375" PointY="8.75" />
+        <EntityTypeShape EntityType="Db_Open_SchoolingModel.Tbl_payment" Width="1.5" PointX="5.375" PointY="8.75" />
+        <EntityTypeShape EntityType="Db_Open_SchoolingModel.Tbl_Registration_Pre" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Db_Open_SchoolingModel.Tbl_Application_Form" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Db_Open_SchoolingModel.Tbl_OpenSch_Result" Width="1.5" PointX="11.375" PointY="9.75" />
+        <EntityTypeShape EntityType="Db_Open_SchoolingModel.Tbl_Site_Status" Width="1.5" PointX="13.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

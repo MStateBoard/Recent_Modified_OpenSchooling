@@ -1,0 +1,548 @@
+﻿@model Open_Schooling.Models.CenterViewModel
+@{
+    ViewBag.Title = "PrintExamApplicationForm";
+    Layout = null;
+}
+
+
+
+<link href="~/Design/CSS/Print.css" rel="stylesheet" />
+<style type="text/css">
+    .modelloader1 {
+        position: fixed;
+        z-index: 999;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        background-color: Black;
+        filter: alpha(opacity=60);
+        opacity: 0.6;
+        -moz-opacity: 0.8;
+    }
+
+    .center {
+        z-index: 1000;
+        margin: 300px auto;
+        padding: 10px;
+        width: 50px;
+        background-color: White;
+        border-radius: 10px;
+        filter: alpha(opacity=100);
+        opacity: 1;
+        -moz-opacity: 1;
+    }
+
+        .center img {
+            height: auto;
+            width: auto;
+        }
+
+    .lblclass {
+        font-weight: bold;
+        font-size: small;
+    }
+
+    .style4 {
+        width: 39px;
+    }
+
+    .style5 {
+        width: 48px;
+    }
+
+    .style7 {
+        padding-top: 10px;
+        padding-left: 10px;
+        width: 290px;
+        font-size: small;
+        /*text-align: left;*/
+    }
+
+    .style8 {
+        width: 63px;
+    }
+
+    .style9 {
+        padding-top: 10px;
+        padding-left: 10px;
+        width: 250px;
+        /*text-align: left;*/
+        font-size: small;
+    }
+
+    .style10 {
+        padding-top: 10px;
+        padding-left: 10px;
+        height: 30px;
+        width: 10px;
+        text-align: center;
+    }
+
+    .style11 {
+        width: 500px;
+        font-size: small;
+    }
+
+    .style12 {
+        width: 556px;
+        text-align: left;
+        font-size: small;
+    }
+
+    .style14 {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .style15 {
+        width: 250px;
+        font-size: small;
+        height: 32px;
+    }
+
+    .style16 {
+        width: 287px;
+    }
+
+    .style17 {
+        width: 19px;
+        height: 11px;
+    }
+
+    .style18 {
+        width: 298px;
+        text-align: left;
+        font-size: small;
+        height: 11px;
+    }
+
+    .style19 {
+        width: 290px;
+        font-size: small;
+        text-align: left;
+        height: 11px;
+    }
+
+    .style20 {
+        height: 16px;
+    }
+
+    .style21 {
+        width: 19px;
+        height: 17px;
+    }
+
+    .style22 {
+        width: 298px;
+        text-align: left;
+        font-size: small;
+        height: 17px;
+    }
+
+    .style23 {
+        width: 290px;
+        font-size: small;
+        text-align: left;
+        height: 17px;
+    }
+
+    .style24 {
+        width: 19px;
+        height: 16px;
+    }
+
+    .style25 {
+        width: 298px;
+        text-align: left;
+        font-size: small;
+        height: 16px;
+    }
+
+    .style26 {
+        width: 290px;
+        font-size: small;
+        text-align: left;
+        height: 16px;
+    }
+
+    .style27 {
+        text-align: center;
+    }
+
+    .style28 {
+        font-family: Arial;
+        border: 1px;
+    }
+
+    .style2 {
+        font-size: medium;
+        font-weight: 700;
+    }
+
+    .style29 {
+        width: 268435456px;
+    }
+
+    .style32 {
+        width: 95px;
+        font-weight: bold
+    }
+
+    .style33 {
+        width: 582px;
+    }
+
+    .style34 {
+        width: 407px;
+        font-size: small;
+    }
+
+    .style36 {
+        width: 295px;
+    }
+
+    .style37 {
+        width: 139px;
+    }
+</style>
+
+<form id="form1" runat="server">
+    <div class="book">
+        <div class="page">
+            <div class="subpage">
+                <div style="text-align: center">
+                </div>
+                <table border="1px" cellspacing="0" style="width: 96%">
+
+                    <tr>
+                        <td colspan="4">
+                            <table style="width: 100%; height: 130px; padding-top:20px;">
+                                <tr>
+                                    <td align="left" class="style5" valign="top">
+                                        <img src="~/Design/Images/MSBSHSE-LOGO.png" alt=""
+                                             style="float: left; height: 124px;" />
+                                    </td>
+                                    <td align="center" class="style27" valign="top">
+                                        <strong>
+                                            <span style=" font-family:Arial Unicode MS; text-align: center;"> महाराष्ट्र राज्य मुक्त्त विद्यालय मंडळ, पुणे-४ </span>
+
+
+                                            <br class="style2" />
+                                        </strong><span class="style2">
+                                            Maharashtra State Board of Open Schooling , Pune-4<br />
+                                            प्रवेश नोंदणी अर्ज
+                                            <br />
+                                            Registration Form Year 2022-23<br />
+                                        </span>
+                                    </td>
+                                    <td align="right" class="style5" valign="top">
+                                        <img src="@Model.tbl_Registration.Photo" alt="Sample Image" style="height:90px;width:80px;" />
+                                        <div style="height:5px"></div>
+
+                                        <img src="@Model.tbl_Registration.Signature" style="height:30px;width:80px;border:1px solid;" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+
+                <table border="1" cellspacing="0" style="width: 96%" cellpadding="-5">
+                    <tr>
+                        <td class="style10">Sr.No.</td>
+                        <td class="style9" height="0px">Name </td>
+                        <td class="style7" height="0px">
+                            Details
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="style10">1.</td>
+                        <td class="style9" height="0px"> <div style="width:10px;"></div> UDISE NO.</td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.Center_Login.UDISE_No)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="style10">2.</td>
+                        <td colspan="1" class="style9"> Contact Center No.  </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.Center_Login.Contact_Center_Code)
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="style10">3.</td>
+                        <td colspan="1" class="style9">Last Name(Surname)  </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.tbl_Registration.Last_Name)
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+                        <td class="style10">4.</td>
+                        <td colspan="1" class="style9"> Candidate Name  </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.tbl_Registration.First_Name)
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="style10">5.</td>
+                        <td colspan="1" class="style9">Middle Name  </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.tbl_Registration.Middle_Name)
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="style10">6.</td>
+                        <td colspan="1" class="style9"> Mother Name </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.tbl_Registration.Mother_Name)
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="style10">7.</td>
+                        <td colspan="1" class="style9">City  </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.tbl_Registration.Village)
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+                        <td class="style10">8.</td>
+                        <td colspan="1" class="style9"> Pincode </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.tbl_Registration.Pin_Code)
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="style10">9.</td>
+                        <td colspan="1" class="style9">Registerd Mobile No.  </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.tbl_Registration.Mobile_No)
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="style10">10.</td>
+                        <td colspan="1" class="style9"> Place Of Birth  </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.tbl_Registration.DOB_Village)
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="style10">11.</td>
+                        <td colspan="1" class="style9">Date Of Birth  </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.tbl_Registration.Date_of_Birth)
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+                        <td class="style10">12.</td>
+                        <td colspan="1" class="style9"> Adhar No. </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.tbl_Registration.Adhar_no)
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="style10">13.</td>
+                        <td colspan="1" class="style9">Gender </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.tbl_Registration.Gender)
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="style10">14.</td>
+                        <td colspan="1" class="style9">Divyang </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.tbl_Registration.Handicap)
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="style10">15.</td>
+                        <td colspan="1" class="style9">Appl. Sr. No. </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.tbl_Registration.ApplicationId)
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="style10">16.</td>
+                        <td colspan="1" class="style9">Address </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.tbl_Registration.Address)
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="style10">16.</td>
+                        <td colspan="1" class="style9">Minority Religion </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.tbl_Registration.Minority_Religion)
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="style10">17.</td>
+                        <td colspan="1" class="style9">Subjects  </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.Subject1),
+
+                            @Html.DisplayFor(model => model.Subject2),
+                            @Html.DisplayFor(model => model.Subject3),
+                            @Html.DisplayFor(model => model.Subject4),
+                            @Html.DisplayFor(model => model.Subject5)
+
+                        </td>
+
+                    </tr>
+
+
+
+
+
+                </table>
+
+
+            </div>
+
+        </div>
+
+
+
+
+        @*</div>
+            </form>*@
+
+
+
+        <div class="page">
+            <div class="subpage">
+                <br />
+                <table border="1px" cellspacing="0" style="width: 96%">
+                    <tr>
+                        <td class="auto-style11" style="padding-left:5px;font-weight:normal;padding-top:5px;">
+                            <Label ID="Label7" Text="I, do here by apply for participating in " style="padding-left:15px;"></Label> the evaluation
+                            process/examinatios  at primary level (equivalent to std V) / at uppqr primary level
+                            (equivalent to std VIII) to be held in March/April 2020   by the Maharashtra State Board Of Open Schooling. I, agree to aride by the rules,regulations and instructions laid down through various circulars issued by the Board. From time to time, I am well aware of the scheme of subjects regarding the same, and.....
+
+
+                            <br />
+
+                            <table style="width: 100%">
+                                <tr>
+                                    <td colspan="3" style="padding-left:15px; font-weight:normal;">1.	In case , I happen to select wrong scheme of subjects,taken by the SBOS. the decision regarding the concellation of the grades / marks of the subject in question, will be obligatory for me to follow.</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" style="padding-left:15px;font-weight:normal;">2.	I am aware of all the instructions for the candidates and I understand it is obligatory for me follow them.</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" style="padding-left:15px;font-weight:normal;">3.	I have obtained the receipt for the fees paid for evaluation process, from contact study centre.</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" style="padding-left:15px;font-weight:normal;">4.	I have not taken admission for any other evaluation process at primary level (equivalent to std V) / upper primary level (equivalent to stdVIII) and passed the same.</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 30%;padding-top:50px;padding-left:3px;">Place</td>
+                                    <td style="width: 30%;padding-top:50px;">Date</td>
+                                    <td style="width: 40%;padding-top:50px;">(Candidate's Signature)</td>
+
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="auto-style8" style="padding-left:5px;padding-top:5px;">
+
+                            <Label ID="Label8" Text="मी, महाराष्ट्र राज्य मुक्त विद्यालय मंडळ, पुणे मार्फत घेण्यात " style="padding-left:15px;"></Label>
+                            येणार्‍या प्राथमिक स्तर ( इयत्ता ५वी समकक्ष ) / उच्च प्राथमिक स्तर( इयत्ता ८वी समकक्ष ) मार्च / एप्रिल ,२०२० मधील मूल्यमापन प्रक्रियेसाठी  अर्ज करीत आहे. मंडळाने या संदर्भात वेळोवेळी  निर्गमित केलेले सर्व नियम व सूचनांचे पालन करण्यात माझी सहमती आहे. त्यासंबंधी विषय योजना मला माहित असून
+                            <br />
+
+                            <table style="width: 100%">
+                                <tr>
+                                    <td colspan="3" style="padding-left:15px; font-weight:normal;">१)	मी चुकीची विषययोजना निवडल्यास माझी संबंधित विषयाची संपादणूक रद्द करण्यासंबंधीचा मंडळाचा निर्णय माझ्यावर बंधनकारक असेल. </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" style="padding-left:15px;font-weight:normal;">२)	उमेदवारासाठीच्या सर्व सूचना मला ज्ञात असून त्या माझ्यावर बंधनकारक राहतील. </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" style="padding-left:15px;font-weight:normal;">३)	मला संपर्क केंद्राकडून मूल्यमापन प्रक्रिया शुल्काची पावती प्राप्त झालेली आहे. </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" style="padding-left:15px;font-weight:normal;">४)	मी इतर कोणत्याही मान्यताप्राप्त समकक्ष मंडळाच्या प्राथमिक स्तर  ( इयत्ता ५वी समकक्ष ) / उच्च प्राथमिक स्तर( इयत्ता ८वी समकक्ष ) मूल्यमापन प्रक्रियेस प्रविष्ठ होऊन यशस्वी झालेलो नाही. </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 30%;padding-top:90px;padding-left:3px;">स्थळ</td>
+                                    <td style="width: 30%;padding-top:90px;">दिनांक</td>
+                                    <td style="width: 40%;padding-top:90px;">उमेदवाराची स्वाक्षरी</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style11" style="font-weight:normal;padding-left:15px;">
+                            1.	I have checked the information and I do hereby certify that it is correct.               ( To the best of my knowledge)
+                            <br />
+                            2.	 The candidate has been given the application form and the receipt for the fees for Evaluation Candidate the Process  and has been informed about the instructions  to be followed by him/her.
+                            <br />
+                            3.	 I do hereby certify that the said candidate is eligible to be admitted for the Evaluation Process  for primary level (equivalent to std V)  / upper primary level (equivalent std VIII ), as per the rules and regulations laid down by Maharashtra State Board  Of Open Schooling.
+                            <br />
+                            <br />
+                            <br />
+                            <b>
+                                Co-ordinator, Contact Centre Contact Centre School
+                            </b>
+                        </td>
+                        <td class="auto-style9" style="font-weight:normal;padding-left:15px;">
+                            १) उमेदवारने दिलेल्या माहितीची मी पडताळणी केली असून त्यानुसार ती बरोबर असल्याची खात्री करून प्रमाणित करीत आहे.
+                            <br />२)	आवेदनपत्र व मूल्यमापन प्रक्रिया शुल्काची पावती आणि उमेदवारसाठीच्या सूचनांची माहिती उमेदवाराला दिलेली आहे.
+                            <br />३)	महाराष्ट्र राज्य मुक्त विद्यालय मंडळाच्या नियमांनुसार उमेदवार प्राथमिक स्तर ( इयत्ता ५वी समकक्ष ) / उच्च प्राथमिक स्तर( इयत्ता ८वी समकक्ष ) मूल्यमापन प्रक्रियेस प्रविष्ठ होण्यास पात्र असल्याचे मी प्रमाणित करीत आहे.
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <b>
+                                संपर्क  केंद्र समन्वयक, संपर्क केंद्रशाळा (सही व शिक्का )
+                            </b>
+                        </td>
+
+
+                    </tr>
+                </table>
+                <center style="margin-top:30px;">
+                    <input action="action"
+                           onclick="window.history.go(-1); return false;"
+                           type="submit"
+                           value="Back"
+                           class="btn btn-default" />
+                </center>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+
+

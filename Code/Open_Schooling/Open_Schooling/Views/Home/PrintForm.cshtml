@@ -1,0 +1,493 @@
+﻿@model Open_Schooling.Models.Tbl_Registration
+@{
+    ViewBag.Title = "PrintForm";
+    Layout = null;
+}
+
+
+
+
+
+
+<link href="~/Design/CSS/Print.css" rel="stylesheet" />
+<style type="text/css">
+    .modelloader1 {
+        position: fixed;
+        z-index: 999;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        background-color: Black;
+        filter: alpha(opacity=60);
+        opacity: 0.6;
+        -moz-opacity: 0.8;
+    }
+
+    .center {
+        z-index: 1000;
+        margin: 300px auto;
+        padding: 10px;
+        width: 50px;
+        background-color: White;
+        border-radius: 10px;
+        filter: alpha(opacity=100);
+        opacity: 1;
+        -moz-opacity: 1;
+    }
+
+        .center img {
+            height: auto;
+            width: auto;
+        }
+
+    .lblclass {
+        font-weight: bold;
+        font-size: small;
+    }
+
+    .style4 {
+        width: 39px;
+    }
+
+    .style5 {
+        width: 48px;
+    }
+
+    .style7 {
+        padding-top: 10px;
+        padding-left: 10px;
+        width: 290px;
+        font-size: small;
+        /*text-align: left;*/
+    }
+
+    .style8 {
+        width: 63px;
+    }
+
+    .style9 {
+        padding-top: 10px;
+        padding-left: 10px;
+        width: 250px;
+        /*text-align: left;*/
+        font-size: small;
+    }
+
+    .style10 {
+        padding-top: 10px;
+        padding-left: 10px;
+        height: 30px;
+        width: 10px;
+        text-align: center;
+    }
+
+    .style11 {
+        width: 500px;
+        font-size: small;
+    }
+
+    .style12 {
+        width: 556px;
+        text-align: left;
+        font-size: small;
+    }
+
+    .style14 {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .style15 {
+        width: 250px;
+        font-size: small;
+        height: 32px;
+    }
+
+    .style16 {
+        width: 287px;
+    }
+
+    .style17 {
+        width: 19px;
+        height: 11px;
+    }
+
+    .style18 {
+        width: 298px;
+        text-align: left;
+        font-size: small;
+        height: 11px;
+    }
+
+    .style19 {
+        width: 290px;
+        font-size: small;
+        text-align: left;
+        height: 11px;
+    }
+
+    .style20 {
+        height: 16px;
+    }
+
+    .style21 {
+        width: 19px;
+        height: 17px;
+    }
+
+    .style22 {
+        width: 298px;
+        text-align: left;
+        font-size: small;
+        height: 17px;
+    }
+
+    .style23 {
+        width: 290px;
+        font-size: small;
+        text-align: left;
+        height: 17px;
+    }
+
+    .style24 {
+        width: 19px;
+        height: 16px;
+    }
+
+    .style25 {
+        width: 298px;
+        text-align: left;
+        font-size: small;
+        height: 16px;
+    }
+
+    .style26 {
+        width: 290px;
+        font-size: small;
+        text-align: left;
+        height: 16px;
+    }
+
+    .style27 {
+        text-align: center;
+    }
+
+    .style28 {
+        font-family: Arial;
+        border: 1px;
+    }
+
+    .style2 {
+        font-size: medium;
+        font-weight: 700;
+    }
+
+    .style29 {
+        width: 268435456px;
+    }
+
+    .style32 {
+        width: 95px;
+        font-weight: bold
+    }
+
+    .style33 {
+        width: 582px;
+    }
+
+    .style34 {
+        width: 407px;
+        font-size: small;
+    }
+
+    .style36 {
+        width: 295px;
+    }
+
+    .style37 {
+        width: 139px;
+    }
+</style>
+
+<form id="form1" runat="server">
+    <div class="book">
+        <div class="page">
+            <div class="subpage">
+                <div style="text-align: center">
+                </div>
+                <table border="1px" cellspacing="0" style="width: 96%">
+
+                    <tr>
+                        <td colspan="4">
+                            <table style="width: 100%; height: 130px; padding-top:20px;">
+                                <tr>
+                                    <td align="left" class="style5" valign="top">
+                                        <img src="~/Design/Images/MSBSHSE-LOGO.png" alt=""
+                                             style="float: left; height: 124px;" />
+                                    </td>
+                                    <td align="center" class="style27" valign="top">
+                                        <strong>
+                                            <span style=" font-family:Arial Unicode MS; text-align: center;"> महाराष्ट्र राज्य मुक्त्त विद्यालय मंडळ, पुणे-४ </span>
+
+
+                                            <br class="style2" />
+                                        </strong><span class="style2">
+                                            Maharashtra State Board of Open Schooling , Pune-4<br />
+                                            प्रवेश नोंदणी अर्ज
+                                            <br />
+                                            Registration Form Year 2022-23<br />
+                                        </span>
+                                    </td>
+                                    <td align="right" class="style5" valign="top">
+                                        <img src="@Model.Photo" alt="Sample Image" style="height:90px;width:80px;" />
+                                        <div style="height:5px"></div>
+
+                                        <img src="@Model.Signature" style="height:30px;width:80px;border:1px solid;" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+
+                <table border="1" cellspacing="0" style="width: 96%" cellpadding="-5">
+                    <tr>
+                        <td class="style10">Sr.No.</td>
+                        <td class="style9" height="0px">Name </td>
+                        <td class="style7" height="0px">
+                            Details
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="style10">1.</td>
+                        <td class="style9" height="0px"> <div style="width:10px;"></div> UDISE NO.</td>
+                        <td class="style7" height="0px">
+                            @TempData["UDISE_No"].ToString()
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="style10">2.</td>
+                        <td colspan="1" class="style9"> Contact Center No.  </td>
+                        <td class="style7" height="0px">
+                            @TempData["Contact_Center_Code"].ToString()
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="style10">3.</td>
+                        <td colspan="1" class="style9">Last Name(Surname)  </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.Last_Name)
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+                        <td class="style10">4.</td>
+                        <td colspan="1" class="style9"> Candidate Name  </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.First_Name)
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="style10">5.</td>
+                        <td colspan="1" class="style9">Middle Name  </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.Middle_Name)
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="style10">6.</td>
+                        <td colspan="1" class="style9"> Mother Name </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.Mother_Name)
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="style10">7.</td>
+                        <td colspan="1" class="style9">City  </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.Village)
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+                        <td class="style10">8.</td>
+                        <td colspan="1" class="style9"> Pincode </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.Pin_Code)
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="style10">9.</td>
+                        <td colspan="1" class="style9">Registerd Mobile No.  </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.Mobile_No)
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="style10">10.</td>
+                        <td colspan="1" class="style9"> Place Of Birth  </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.DOB_Village)
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="style10">11.</td>
+                        <td colspan="1" class="style9">Date Of Birth  </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.Date_of_Birth)
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+                        <td class="style10">12.</td>
+                        <td colspan="1" class="style9"> Adhar No. </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.Adhar_no)
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="style10">13.</td>
+                        <td colspan="1" class="style9">Gender </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.Gender)
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="style10">14.</td>
+                        <td colspan="1" class="style9">Divyang </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.Handicap)
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="style10">15.</td>
+                        <td colspan="1" class="style9">Appl. Sr. No. </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.ApplicationId)
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="style10">16.</td>
+                        <td colspan="1" class="style9">Address </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.Address)
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="style10">16.</td>
+                        <td colspan="1" class="style9">Minority Religion </td>
+                        <td class="style7" height="0px">
+                            @Html.DisplayFor(model => model.Minority_Religion)
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="style10">17.</td>
+                        <td colspan="1" class="style9">Subjects  </td>
+                        <td class="style7" height="0px">
+
+                            @TempData["Subject_List"].ToString()
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="style10">18.</td>
+                        <td colspan="1" class="style9">Payment Status  </td>
+                        <td class="style7" height="0px">
+
+                            @TempData["order_status"].ToString()
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="style10">19.</td>
+                        <td colspan="1" class="style9">Payment Amount  </td>
+                        <td class="style7" height="0px">
+
+                            @TempData["Amount"].ToString()
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="style10">20.</td>
+                        <td colspan="1" class="style9">Card Name  </td>
+                        <td class="style7" height="0px">
+
+                            @TempData["Card_name"].ToString()
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="style10">21.</td>
+                        <td colspan="1" class="style9">Transaction Id  </td>
+                        <td class="style7" height="0px">
+
+                            @TempData["tracking_id"].ToString()
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="style10">22.</td>
+                        <td colspan="1" class="style9">Bank Reference No   </td>
+                        <td class="style7" height="0px">
+
+                            @TempData["bank_ref_no"].ToString()
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="style10">23.</td>
+                        <td colspan="1" class="style9">Transaction Date  </td>
+                        <td class="style7" height="0px">
+
+                            @*@TempData["trans_date"].ToString()*@
+                        </td>
+
+                    </tr>
+
+
+
+
+
+
+                </table>
+
+
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+</form>
+
+
+

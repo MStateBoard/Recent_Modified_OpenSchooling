@@ -1,0 +1,508 @@
+﻿@model Open_Schooling.Models.CenterViewModel
+@{
+    ViewBag.Title = "Application_Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+@*@using (Html.BeginForm("Application_Form", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()*@
+<form id="submit_form">
+    <div class="container" style="margin-left:-10px">
+        <div class="row" style="font-size: medium; font-weight: bold; text-align: center; line-height: 30px; padding-top: 10px;">
+            Application  Form
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-lg-2">
+                <span>1)  Form No</span>
+            </div>
+            <div class="col-lg-3">
+                @Html.TextBoxFor(model => model.tbl_Registration.ApplicationId, new { @class = "form-control", @placeholder = " ", @id = "ApplicationId", @name = "ApplicationId", @required = "required" })
+                @Html.ValidationMessageFor(model => model.tbl_Registration.ApplicationId, "", new { @class = "text-danger" })
+            </div>
+
+
+
+
+            <div class="col-lg-2">
+                <span>2)UDISE No.</span>
+            </div>
+            <div class="col-lg-3">
+                @Html.TextBoxFor(model => model.Center_Login.UDISE_No, new { @class = "form-control", @placeholder = " ", @name = "UDISE_No ", @id = "UDISE_No", @required = "required" })
+                @Html.ValidationMessageFor(model => model.Center_Login.UDISE_No, "", new { @class = "text-danger" })
+            </div>
+        </div><br />
+
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-lg-2">
+                <span>3) Center No. :</span>
+            </div>
+            <div class="col-lg-3">
+                @Html.TextBoxFor(model => model.tbl_Registration.Center_Code, new { @class = "form-control", @placeholder = " ", @id = " Center_Code", @required = "required" })
+                @Html.ValidationMessageFor(model => model.tbl_Registration.Center, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-lg-2">
+                <span>4)Name</span>
+            </div>
+            <div class="col-lg-3">
+                @Html.TextBoxFor(model => model.tbl_Registration.First_Name, new { @class = "form-control", @placeholder = " ", @id = "First_Name ", @required = "required" })
+                @Html.ValidationMessageFor(model => model.tbl_Registration.First_Name, "", new { @class = "text-danger" })
+            </div>
+        </div><br />
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-lg-2">
+                <span>5) Middle Name:</span>
+            </div>
+            <div class="col-lg-3">
+                @Html.TextBoxFor(model => model.tbl_Registration.Middle_Name, new { @class = "form-control", @placeholder = " ", @id = "Middle_Name ", @required = "required" })
+                @Html.ValidationMessageFor(model => model.tbl_Registration.Middle_Name, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-lg-2">
+                <span>6)Last Name</span>
+            </div>
+            <div class="col-lg-3">
+                @Html.TextBoxFor(model => model.tbl_Registration.Last_Name, new { @class = "form-control", @placeholder = " ", @id = "Last_Name ", @required = "required" })
+                @Html.ValidationMessageFor(model => model.tbl_Registration.Last_Name, "", new { @class = "text-danger" })
+            </div>
+        </div><br />
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-lg-2">
+                <span>7) Mother Name:</span>
+            </div>
+            <div class="col-lg-3">
+                @Html.TextBoxFor(model => model.tbl_Registration.Mother_Name, new { @class = "form-control", @placeholder = " ", @id = " Mother_Name", @required = "required" })
+                @Html.ValidationMessageFor(model => model.tbl_Registration.Mother_Name, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-lg-2">
+                <span>8)Residential Address</span>
+            </div>
+            <div class="col-lg-3">
+                @Html.TextBoxFor(model => model.tbl_Registration.Address, new { @class = "form-control", @placeholder = " ", @id = "Address ", @required = "required" })
+                @Html.ValidationMessageFor(model => model.tbl_Registration.Address, "", new { @class = "text-danger" })
+            </div>
+        </div><br />
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-lg-2">
+                <span> 9)Pincode:</span>
+            </div>
+            <div class="col-lg-3">
+                @Html.TextBoxFor(model => model.tbl_Registration.Pin_Code, new { @class = "form-control", @placeholder = " ", @id = " Pin_Code", @required = "required" })
+                @Html.ValidationMessageFor(model => model.tbl_Registration.Pin_Code, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-lg-2">
+                <span>10) Mobile No.:</span>
+            </div>
+            <div class="col-lg-3">
+                @Html.TextBoxFor(model => model.tbl_Registration.Mobile_No, new { @class = "form-control", @placeholder = " ", @id = " Mobile_No", @required = "required" })
+                @Html.ValidationMessageFor(model => model.tbl_Registration.Mobile_No, "", new { @class = "text-danger" })
+            </div>
+        </div><br />
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-lg-2">
+                <span>11) Place of Birth:</span>
+            </div>
+            <div class="col-lg-3">
+                @Html.TextBoxFor(model => model.tbl_Registration.DOB_Village, new { @class = "form-control", @placeholder = " ", @id = "DOB_Village ", @required = "required" })
+                @Html.ValidationMessageFor(model => model.tbl_Registration.DOB_Village, "", new { @class = "text-danger" })
+            </div>
+
+            <!--<div class="col-lg-2">
+                <span>12) Date of Birth:</span>
+            </div>
+            <div class="col-lg-3">
+                <input type="date" id="Date_of_birth" name="Date_of_birth" style="width:250px;" />-->
+            @*@Html.TextBoxFor(model => model.Date_of_birth, new { @class = "form-control", @placeholder = " ", @name = " ", @required = "required" })*@
+            <!--@Html.ValidationMessageFor(model => model.tbl_Registration.Date_of_Birth, "", new { @class = "text-danger" })
+            </div>-->
+        </div><br />
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-lg-2">
+                <span>13) Adhar No:</span>
+            </div>
+            <div class="col-lg-3">
+                @Html.TextBoxFor(model => model.tbl_Registration.Adhar_no, new { @class = "form-control", @placeholder = " ", @id = "Adhar_no ", @required = "required" })
+                @Html.ValidationMessageFor(model => model.tbl_Registration.Adhar_no, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-lg-2">
+                <span>14)Gender:</span>
+            </div>
+            <div class="col-lg-3">
+                @Html.TextBoxFor(model => model.tbl_Registration.Gender, new { @class = "form-control", @placeholder = " ", @id = "Gender ", @required = "required" })
+                @Html.ValidationMessageFor(model => model.tbl_Registration.Gender, "", new { @class = "text-danger" })
+            </div>
+        </div><br />
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-lg-2">
+                <span>15) Minority Religion :</span>
+            </div>
+
+            <div class="col-lg-3">
+                @Html.DropDownListFor(model => model.tbl_Registration.Minority_Religion, new List<SelectListItem>
+                           {
+                               new SelectListItem { Text = "Non-Minority", Value = "Non-Minority"},
+                               new SelectListItem { Text = "Muslim", Value = "Muslim"},
+                               new SelectListItem { Text = "Christian", Value = "Christian"},
+                                new SelectListItem { Text = "Buddhist", Value = "Buddhist"},
+                               new SelectListItem { Text = "Sikh", Value = "Sikh"},
+                                new SelectListItem { Text = "Parsi", Value = "Parsi"},
+                               new SelectListItem { Text = "Jain", Value = "Jain"},
+
+                            }, "Select ", new { @class = "btn btn-default dropdown-toggle", @id = "Minority_Religion", @style = "width:100%" })
+            </div>
+
+            @*<div class="col-lg-2">
+                    <span>16)Minority Category:</span>
+                </div>
+
+                <div class="col-lg-3">
+                    @Html.DropDownListFor(model => model.tbl_Registration.Minority_Religion, new List<SelectListItem>
+                               {
+                                   new SelectListItem { Text = "SC", Value = "SC"},
+                                   new SelectListItem { Text = "ST", Value = "ST"},
+                                   new SelectListItem { Text = "VJ(A)", Value = "VJ(A)"},
+                                    new SelectListItem { Text = "NT(B)", Value = "NT(B)"},
+                                   new SelectListItem { Text = "NT(C)", Value = "NT(C)"},
+                                    new SelectListItem { Text = "NT(D)", Value = "NT(D)"},
+                                   new SelectListItem { Text = "OBC", Value = "OBC"},
+                                    new SelectListItem { Text = "SBC", Value = "SBC"},
+                                   new SelectListItem { Text = "OPEN", Value = "OPEN"},
+                                    new SelectListItem { Text = "MARATHA(ESBC)", Value = "MARATHA(ESBC)"},
+
+                                }, "Select ", new { @class = "btn btn-default dropdown-toggle", @style = "width:100%" })
+                </div>*@
+        </div><br />
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-lg-2">
+                <span>17)Divyang :</span>
+            </div>
+            <div class="col-lg-3">
+                @Html.DropDownListFor(model => model.tbl_Registration.Handicap, new List<SelectListItem>
+                               {
+                                   new SelectListItem { Text = "Blindness/partail blind", Value = "Blindness/partail blind"},
+                                   new SelectListItem { Text = "Leprosy Cured Persons", Value = "Leprosy Cured Persons"},
+                                   new SelectListItem { Text = "Hearing Impairment - deaf and dumb", Value = "Hearing Impairment - deaf and dumb"},
+                                   new SelectListItem { Text = "Locomotor Disability including Orthopedic disability", Value = "Locomotor Disability including Orthopedic disability"},
+                                   new SelectListItem { Text = "Dwarfism", Value = "Dwarfism"},
+                                   new SelectListItem { Text = "Intellectual Disability - Mentally challenged", Value = "Intellectual Disability - Mentally challenged"},
+                                   new SelectListItem { Text = "Multiple Disabilities", Value = "Multiple Disabilities"},
+                                   new SelectListItem { Text = "Mental Illness", Value = "Mental Illness"},
+                                   new SelectListItem { Text = "Autism Spectrum Disorder", Value = "Autism Spectrum Disorder"},
+                                   new SelectListItem { Text = "Cerebral Palsy", Value = "Cerebral Palsy"},
+                                   new SelectListItem { Text = "Muscular Dystrophy", Value = "Muscular Dystrophy"},
+                                   new SelectListItem { Text = "Chronic Neurological Conditions", Value = "Chronic Neurological Conditions"},
+                                   new SelectListItem { Text = "Specific Learning Disabilities", Value = "Specific Learning Disabilities"},
+                                   new SelectListItem { Text = "Slow learners / Intellectual Disablity Border Line", Value = "Slow learners / Intellectual Disablity Border Line"},
+                                   new SelectListItem { Text = "Multiple Sclerosis", Value = "Multiple Sclerosis"},
+                                   new SelectListItem { Text = "Speech and Language Disability", Value = "Speech and Language Disability"},
+                                   new SelectListItem { Text = "Thalassemia / Cancer", Value = "Thalassemia / Cancer"},
+                                   new SelectListItem { Text = "Hemophilia", Value = "Hemophilia"},
+                                   new SelectListItem { Text = "Sickle Cell Disease", Value = "Sickle Cell Disease"},
+                                   new SelectListItem { Text = "Acid Attack Victim", Value = "Acid Attack Victim"},
+                                   new SelectListItem { Text = "Parkinson’s Disease", Value = "Parkinson’s Disease"},
+                                   new SelectListItem { Text = "Other Disablities", Value = "Other Disablities"},
+                                }, "Select ", new { @id = "Handicap", @class = "btn btn-default dropdown-toggle", @style = "width:100%" })
+
+            </div>
+
+            <div class="col-lg-2">
+                <span>18)Medium :</span>
+            </div>
+            <div class="col-lg-3">
+                @Html.DropDownListFor(model => model.tbl_Registration.Medium, new List<SelectListItem>
+                           {
+                               new SelectListItem { Text = "English", Value = "English"},
+                               new SelectListItem { Text = "Marathi", Value = "Marathi"},
+                               new SelectListItem { Text = "Urdu", Value = "Urdu"},
+                            }, "Select ", new { @class = "btn btn-default dropdown-toggle", @id = "Medium", @style = "width:100%" })
+            </div>
+        </div><br />
+
+
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-lg-2">
+                <span>21)Types Of User:</span>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <div>
+                        <label class="radio-inline">
+
+                            @Html.RadioButton("Type_Of_User", "Fresh", true) Fresh
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-1"></div>
+
+
+            <div class="col-lg-2">
+                <span>29)Enrollment Certificate No:</span>
+            </div>
+            <div class="col-sm-3">
+                @Html.TextBoxFor(model => model.tbl_Registration.Enrollment_No, new { @class = "form-control", @placeholder = " ", @id = "Enrollment_No", @name = " ", @required = "required" })
+                @Html.ValidationMessageFor(model => model.tbl_Registration.Enrollment_No, "", new { @class = "text-danger" })
+            </div>
+        </div><br />
+        <div class="row">
+            <div class="col-md-1"></div>
+
+
+            <div class="col-lg-2">
+                <span>30)EC Year:</span>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    @Html.TextBoxFor(model => model.EC_Year, new { @class = "form-control", @placeholder = " ", @id = "EC_Year ", @required = "required" })
+                    @Html.ValidationMessageFor(model => model.EC_Year, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="col-lg-2">
+                <span>30)LastExamYear:</span>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group">
+                    @Html.TextBoxFor(model => model.LastExamYear, new { @class = "form-control", @placeholder = " ", @id = "LastExamYear ", @required = "required" })
+                    @Html.ValidationMessageFor(model => model.LastExamYear, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div><br />
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-lg-2">
+                <span>29)LastExamSeatNo:</span>
+            </div>
+            <div class="col-sm-3">
+                @Html.TextBoxFor(model => model.LastExamSeatNo, new { @class = "form-control", @placeholder = " ", @id = "LastExamSeatNo ", @required = "required" })
+                @Html.ValidationMessageFor(model => model.LastExamSeatNo, "", new { @class = "text-danger" })
+            </div>
+
+
+        </div><br />
+
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-1"></div>
+                <div class="col-lg-2">
+                    <span>sub1:</span>
+
+                    @Html.TextBoxFor(model => model.Subject1, new { @class = "form-control", @placeholder = " ", @name = " ", @required = "required" })
+                    @Html.ValidationMessageFor(model => model.Subject1, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-lg-2">
+                    <span>sub2:</span>
+
+                    @Html.TextBoxFor(model => model.Subject2, new { @class = "form-control", @placeholder = " ", @name = " ", @required = "required" })
+                    @Html.ValidationMessageFor(model => model.Subject2, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-lg-2">
+                    <span>sub3:</span>
+
+                    @Html.TextBoxFor(model => model.Subject3, new { @class = "form-control", @placeholder = " ", @name = " ", @required = "required" })
+                    @Html.ValidationMessageFor(model => model.Subject3, "", new { @class = "text-danger" })
+
+                </div>
+
+
+                <div class="col-lg-2">
+                    <span>sub4:</span>
+
+
+                    @Html.TextBoxFor(model => model.Subject4, new { @class = "form-control", @placeholder = " ", @name = " ", @required = "required" })
+                    @Html.ValidationMessageFor(model => model.Subject4, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-lg-2">
+                    <span>sub5:</span>
+
+                    @Html.TextBoxFor(model => model.Subject5, new { @class = "form-control", @placeholder = " ", @name = " ", @required = "required" })
+                    @Html.ValidationMessageFor(model => model.Subject5, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+        @*<div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-sm-2" style="margin-top:40px">
+                    <span>
+                        19)Upload Photo<span style="color: red">*</span>
+                    </span>
+                </div>
+                <div class="col-sm-3">
+                    <img src="~/Design/Images/camera.png" style="margin:10px" height="40" width="40" id="imagePreview" />
+                    <input type="file" name="Upload_Photo" id="Photo" accept="image/jpeg, image/png" onchange="ShowImagePreview(this,document.getElementById('imagePreview'))" />
+                </div>
+                <div class="col-sm-2" style="margin-top:40px">
+                    <span>
+                        20)Upload Signature<span style="color: red">*</span>
+                    </span>
+                </div>
+                <div class="col-sm-4">
+                    <img src="~/Design/Images/sign.jpg" style="margin:10px" height="40" width="40" id="imagePreview1" />
+                    <input type="file" name="Upload_Sign" id="Signature" accept="image/jpg, image/png" onchange="ShowImagePreview(this,document.getElementById('imagePreview1'))" />
+                </div>
+
+            </div>*@
+
+
+        @*<div class="row">
+                <div class="col-lg-1" style="text-align:right">
+                    <span>17)</span>
+                </div>
+                <div class="col-lg-2">
+                    <span>Subject Details-</span>
+                </div>
+                <div class="col-lg-9">
+                    <table class="table table-striped table-bordered" style="width:80%">
+                        <thead>
+                            <tr>
+                                <th>Sub1</th>
+                                <th>Sub2</th>
+                                <th>Sub3</th>
+                                <th>Sub4</th>
+                                <th>Sub5</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>@Html.DisplayFor(model => model.Subject1, new { htmlAttributes = new { @class = "form-control" } }) </td>
+                                <td>@Html.DisplayFor(model => model.Subject2, new { htmlAttributes = new { @class = "form-control" } }) </td>
+                                <td>@Html.DisplayFor(model => model.Subject3, new { htmlAttributes = new { @class = "form-control" } }) </td>
+                                <td>@Html.DisplayFor(model => model.Subject4, new { htmlAttributes = new { @class = "form-control" } }) </td>
+                                <td>@Html.DisplayFor(model => model.Subject5, new { htmlAttributes = new { @class = "form-control" } }) </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>*@
+        <div style="height:35px;"></div>
+
+        <div style="text-align:center">
+            <input type="button" class="btn btn-success" value="Submit" id="btn_submit" style="width:100px" />
+        </div>
+    </div>
+
+
+
+</form>
+
+@*}*@
+<script>
+    $(document).ready(function () {
+
+        $("#btn_submit").click(function (e) {
+            var formData = new FormData($(submit_form)[0]);
+            console.log(formData);
+            $.ajax({
+                url: "../Center/Save_Application_Form",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                beforeSend: function () {
+                    Showloader();
+                },
+                complete: function () {
+                    Hideloader();
+                },
+                success: function (Data) {
+                    if (Data.Result) {
+
+                        Success_Alert(Data.Response);
+                        $('#submit_form')[0].reset();
+                    }
+                    else {
+                        Error_Alert(Data.Response);
+                    }
+
+                },
+                error: function (e1, e2, e3) {
+                    Error_Alert(Data.Response);
+                }
+            });
+        })
+
+
+
+
+    })
+
+
+
+
+
+    function mainForm() {
+        debugger;
+        var Id1 = document.getElementById("ApplicationId").value;
+
+
+        var myObj = {
+            "ApplicationId": Id1,
+
+        };
+
+        var myJSONobj = JSON.stringify(myObj);
+        $.ajax({
+
+            url: "hallTickit",
+            type: "GET",
+            data: { myJSON: myJSONobj },
+            success: function (Data) {
+                if (Data.Result == "Success") {
+                    window.location.replace(Data.Message);
+                }
+                if (Data.Result == "Failed") {
+                    Error_Alert(Data.Message);
+                }
+            },
+            error: function (Data, e1, e2, e3) {
+                Error_Alert(Data.Message);
+            }
+        });
+    }
+
+
+</script>
+
+
+
+
+
+

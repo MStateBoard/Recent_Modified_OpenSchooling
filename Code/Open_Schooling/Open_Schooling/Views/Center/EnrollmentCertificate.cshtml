@@ -1,0 +1,219 @@
+﻿@model Open_Schooling.Models.CenterViewModel
+@{
+    ViewBag.Title = "EnrollmentCertificate";
+    Layout = null;
+    var dateAndTime = DateTime.Now;
+    var downloaddate = dateAndTime.ToString("dd/MM/yyyy");
+}
+
+
+
+
+
+
+
+<link href="~/Design/CSS/Print.css" rel="stylesheet" />
+<style type="text/css">
+    .modelloader1 {
+        position: fixed;
+        z-index: 999;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        background-color: Black;
+        filter: alpha(opacity=60);
+        opacity: 0.6;
+        -moz-opacity: 0.8;
+    }
+
+    .btn-success1 {
+        color: #fff;
+        background-color: #5cb85c;
+        border-color: #4cae4c;
+    }
+
+    .center {
+        z-index: 1000;
+        margin: 300px auto;
+        padding: 10px;
+        width: 50px;
+        background-color: White;
+        border-radius: 10px;
+        filter: alpha(opacity=100);
+        opacity: 1;
+        -moz-opacity: 1;
+    }
+
+        .center img {
+            height: auto;
+            width: auto;
+        }
+
+    .lblclass {
+        font-weight: bold;
+        font-size: small;
+    }
+</style>
+
+<div class="page">
+    <div class="subpage">
+        <div id="dvContents" style="margin-top:10px;">
+            <table border="1" cellspacing="0" style="width: 96%;" cellpadding="-5">
+                <tr>
+                    <td style="text-align: center; line-height: 20px; padding: 5px">
+                        MAHARASHTRA STATE BOARD OF SECONDARY & HIGHER SECONDARY
+                        <br />
+                        EDUCATION, PUNE 04
+                        <br />
+                        MAHARASHTRA STATE BOARD OF OPEN SCHOOLING<br />
+                        ENROLLMENT CERTIFICATE 2022
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <td style="width: 85%; padding: 5px; border-right: 1px solid; height: 100px; word-spacing: 2px; font-weight: normal; line-height: 20px">
+                                    Certified that the candidate whose particulars are mentioned below is registered as OPEN SCHOOL CANDIDATE for the std. @ViewData["stand"]th from 17 October 2022  to 30 November 2022 subject to rules governing admission of Open School Candidate's to the Evaluations, through the recognised Primary/Secondary School.
+                                </td>
+
+                                <td style="width: 15%; padding: 5px; font-weight: normal; text-align: center">
+                                    @*<img src="@Session["Photo"]" alt="Sample Image" style="height:80px;width:80px;display:none" />*@
+                                    <img src="@Session["Photo"]" alt="Sample Image" style="height:80px;width:80px;" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="line-height: 20px; padding: 5px;">
+                        CANDIDATE'S NAME : <Label ID="lblCanName" runat="server" Text="">@Model.tbl_Registration.First_Name</Label>
+                        <br />
+                        MOTHER'S NAME : <Label ID="lblMotheName" runat="server" Text="">@Model.tbl_Registration.Mother_Name</Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="line-height: 20px;">
+                        <table>
+                            <tr>
+                                <td style="width: 20%; border-right: 1px solid; text-align: center; padding: 5px;">
+                                    DIVISIONAL<br />
+                                    BOARD
+                                </td>
+                                <td style="width: 20%; border-right: 1px solid; text-align: center; padding: 5px;">
+                                    DATE OF BIRTH<br />
+                                    (yyyy-mm-dd)
+                                </td>
+                                <td style="width: 5%; border-right: 1px solid; text-align: center; padding: 5px;">M/F</td>
+                                <td style="width: 20%; border-right: 1px solid; text-align: center; padding: 5px;">
+                                    SCHOOL<br />
+                                    UDISE NO.
+                                </td>
+                                <td style="width: 20%; border-right: 1px solid; text-align: center; padding: 5px;">
+                                    CONTACT
+                                    <br />
+                                    CENTER NO.
+                                </td>
+                                <td style="width: 10%; text-align: center; padding: 5px;">EC NUMBER</td>
+                            </tr>
+                            <tr style="height: 30px">
+                                <td style="width: 20%; border-right: 1px solid; text-align: center; padding: 5px; border-top: 1px solid;">
+                                    <Label ID="lblDivision" runat="server" Text="">@Model.Center_Login.Division</Label>
+                                </td>
+                                <td style="width: 20%; border-right: 1px solid; text-align: center; padding: 5px; border-top: 1px solid;">
+                                    <label ID="lblDOB" runat="server" Text="">@Model.tbl_Registration.Date_of_Birth</label>
+                                </td>
+                                <td style="width: 10%; border-right: 1px solid; text-align: center; padding: 5px; border-top: 1px solid;">
+                                    <label ID="lblGender" runat="server" Text="">@Model.tbl_Registration.Gender</label>
+                                </td>
+                                <td style="width: 20%; border-right: 1px solid; text-align: center; padding: 5px; border-top: 1px solid;">
+                                    <label ID="lbludise" runat="server" Text="">@Model.Center_Login.UDISE_No</label>
+                                </td>
+                                <td style="width: 20%; border-right: 1px solid; text-align: center; padding: 5px; border-top: 1px solid;">
+                                    <label ID="lblcentercontact" runat="server" Text="">@Model.tbl_Registration.Center_Code</label>
+                                </td>
+                                <td style="width: 10%; border-right: 1px solid; text-align: center; padding: 5px; border-top: 1px solid;">
+                                    <label ID="lbl_ecno" runat="server" Text="">@Model.tbl_Registration.Enrollment_No</label>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="line-height: 20px; padding: 5px;">
+                        Name & Address of the Contact Center :
+                        <label ID="lblContact" runat="server" Text="">@Model.tbl_Registration.Center</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label ID="Label1" runat="server" style="text-align:left; margin-left: 5px;">
+                            DATE OF ISSUE:
+                        </label>
+                        <label ID="lblissuedate" runat="server" Text="" style="text-align:left; margin-left: 5px;">25/01/2023 </label>
+                        <label ID="Label2" runat="server" style="text-align:right; margin-left:150px;">DATE OF DOWNLOAD:</label>
+                        <label ID="lbldownloaddate" runat="server" Text="" style="text-align:left; margin-left: 5px;">@downloaddate</label>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td style="line-height: 20px;">
+                        <table>
+                            <tr>
+                                <td style="width: 85%; border-right: 1px solid; font-weight: normal; padding: 5px;
+                                                word-spacing: 2px;">
+                                    <b>Notes:</b>
+                                    <br />
+                                    <label ID="Label3">1)This Enrolment Certificate will be valid for subsequent nine examinations within</label>
+
+                                    <label ID="Label4" Style="margin-left: 10px;">subsequent five years (If necessary) of std @ViewData["stand"]th.</label><br />
+
+                                    <label ID="Label5">
+                                        2)Student must submit Evaluation form within stipulated period with fees for std. @ViewData["stand"]th
+                                    </label>
+                                    <label ID="Label6" Style="margin-left: 10px;">Examination from above mentioned school only.</label><br />
+
+                                    <label ID="Label8"> 3)This Certificate must be preserved and EC number must be entered on Candidate's</label>
+                                    <label ID="Label9" Style="margin-left: 10px">Evaluation  form for admission to the evaluation.</label>
+                                </td>
+                                <td style="width: 15%; padding: 5px; padding-top: 50px; text-align: center">
+                                    <img src="~/Design/Images/WhatsApp_Image-removebg-preview.png" style="Width:100px; Height:50px" />
+                                    Secretary
+                                    <br />
+                                    M.S.B.O.S<br />
+                                    Pune
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="height: 30px; padding: 5px">
+                        CASE NO : <label ID="lblCaseNo" runat="server" Text="">@Model.tbl_Registration.ApplicationId</label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <center style="margin-top:30px;">
+            <input type="submit" value="Print" onclick="PrintDiv()" class="btn-success1" />
+        </center>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function PrintDiv() {
+        var divContents = document.getElementById("dvContents").innerHTML;
+        var printWindow = window.open('', '', 'height=400,width=600');
+        printWindow.document.write('<html><head>');
+        printWindow.document.write('<link href="Styles/sitep.css" rel="stylesheet" type="text/css" />');
+        printWindow.document.write('<link href="Styles/StyleP.css" rel="stylesheet" type="text/css" />');
+        printWindow.document.write('</head><body>');
+        printWindow.document.write(divContents);
+        printWindow.document.write('</body></html>');
+        printWindow.document.close();
+        printWindow.print();
+    }
+</script>
+
+

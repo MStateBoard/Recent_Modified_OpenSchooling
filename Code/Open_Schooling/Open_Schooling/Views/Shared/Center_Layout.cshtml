@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Open Schooling</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/Design/SweetAlert/sweetalert2.js"></script>
+    <link href="~/Design/SweetAlert/SweetAlert2.css" rel="stylesheet" />
+    <script src="~/Design/JS/Project.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    @*<link href="~/Design/CSS/bootstrap.css" rel="stylesheet" />
+        <script src="~/Design/JS/bootstrap.js"></script>*@
+
+    <link href="~/Design/CSS/grid.css" rel="stylesheet" />
+    <style>
+        .container {
+            /*  padding-right: auto;
+            padding-left: auto;*/
+            margin-right: 5px;
+            margin-left: 5px;
+            margin-bottom: 190px;
+            background-color: white;
+            width: auto;
+        }
+
+        .navbar-inverse {
+            background-color: #3070ae;
+        }
+
+            .navbar-inverse .navbar-nav > li > a {
+                color: white;
+            }
+
+        .log {
+            float: right;
+            margin-top: 5px;
+            padding: 5px;
+        }
+
+            .log a {
+                color: black;
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+        .Home, .Download {
+            float: left;
+            margin-top: 5px;
+            padding: 5px;
+        }
+
+            .Home a, .Download a {
+                color: black;
+                font-size: 18px;
+                font-weight: bold;
+            }
+    </style>
+</head>
+<body style="padding-top: 10px; margin: 0px 8px 0px 8px; background: #06213F ">
+    @*background-color: #0d4167*@
+    <div style="background-color:white;height:100%;">
+        <div class="container-fluid p-10  text-white text-center" style="background-color:white;">
+            <div class="row">
+                <div class="col-sm-12" align="center">
+                    <div class="row w-100 mx-auto">
+                        <div class=" col-10 px-md-0 text-center heading-name">
+                            <img src="~/Design/Images/MSBSHSE-LOGO.png" style="float:left;width:8%" />
+                            <h2>
+                                Maharashtra State Board of Secondary & Higher Secondary Education Pune 411004
+                            </h2>
+                            <h3>
+                                महाराष्ट्र राज्य मुक्त विद्यालय मंडळ, पुणे-४११००४
+                            </h3>
+                            <h3>Official Website for Open Schooling</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-inverse" style="margin-bottom:0px">
+        <div class="container1">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                </ul>
+                <div class="Home"><a href="CenterLogin">Home</a> </div>
+                <div class="Download"><a href="Download_Page">Download</a> </div>
+                <div class="log"><a href="CenterLogin">Log Out</a> </div>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content table-bordered">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>Copyright &copy; @DateTime.Now.Year -All Rights Reserved - Maharashtra State Board Pune</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @RenderSection("scripts", required: false)
+
+    <script src="~/Design/JS/ApplicationForm.js"></script>
+    <script src="~/Design/JS/jquery.validate.min.js"></script>
+    <script src="~/Design/JS/jquery.validate.unobtrusive.js"></script>
+</body>
+</html>

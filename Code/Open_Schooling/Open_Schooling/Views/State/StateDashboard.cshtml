@@ -1,0 +1,320 @@
+﻿@model Open_Schooling.Models.Division_List_Model
+@{
+    ViewBag.Title = "StateDashboard";
+    Layout = "~/Views/Shared/StateLayout.cshtml";
+}
+
+
+
+<style>
+
+    table, th, td {
+        border: 1px solid #c1d0d9b8;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 5px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+
+    #btn_Excel {
+        width: 200px;
+        padding: 8px;
+        position: absolute;
+        right: 20px;
+    }
+</style>
+
+<div class="row">
+    <div class="col-sm-6">
+        <h2>StateDashboard</h2>
+    </div>
+    <div class="col-sm-6">
+
+
+
+        <h2></h2>
+        <input type="button" style="background-color:#1a50b1; color:white"  id="btn_Excel" value="Download Excel"><br />
+    </div>
+</div>
+<div class="row">
+    <div style="float:right;  margin-right:50px;padding-top:10px;color:red;font-size:18px;">
+        @*@TempData["count"].ToString()*@
+    </div>
+</div>
+<br />
+<div class="row" style="border:inset 2px  #3eadcf"></div>
+<br />
+<form id="batch_form">
+
+    <div class="row">
+
+
+
+
+        <div class="col-sm-2">
+            <label>Select Division :</label>
+            @Html.DropDownListFor(m => m.Div_Code, new List<SelectListItem> {
+            new SelectListItem { Text = "Select Division",   Value = "0", Selected = true,Disabled = true},
+            new SelectListItem{Text="PUNE", Value="1"},
+            new SelectListItem{Text="NAGPUR", Value="2"},
+            new SelectListItem{Text="AURANGABAD", Value="3"},
+            new SelectListItem{Text="MUMBAI", Value="4"},
+            new SelectListItem{Text="KOLHAPUR", Value="5"},
+            new SelectListItem{Text="AMRAVATI", Value="6"},
+            new SelectListItem{Text="NASHIK", Value="7"},
+            new SelectListItem{Text="LATUR", Value="8"},
+            new SelectListItem{Text="KONKAN ", Value="9"},
+            }, new { @name = "Type", @class = "form-control" })
+        </div>
+
+    </div>
+
+
+    <br />
+    <br />
+    <div class="table-responsive">
+        <table id="rightContainer_ContentTable1_tblPreferencedOptionsList" class="AppFormTable">
+            <tbody>
+                @*<tr>
+                        <th align="left"><font size="2"></font></th>
+                    </tr>*@
+                <tr>
+                    <td>
+                        <table class="DataGrid" cellspacing="0" cellpadding="1" id="Questiondata" style="border-width: 1px; border-style: solid; width: 100%;  overflow-x: scroll">
+                            <thead>
+                                <tr>
+                                    <th class="Header" align="center" valign="middle" scope="col" style="font-weight:bold;width:1%;">ID</th>
+                                    <th class="Header" align="center" valign="middle" scope="col" style="font-weight:bold;width:3%;">ApplicationId</th>
+                                    <th class="Header" align="center" valign="middle" scope="col" style="font-weight:bold;width:3%;">First_Name</th>
+                                    <th class="Header" align="center" valign="middle" scope="col" style="font-weight:bold;width:3%;">Last_Name</th>
+                                    <th class="Header" align="center" valign="middle" scope="col" style="font-weight:bold;width:3%;">Mobile_No</th>
+                                    <th class="Header" align="center" valign="middle" scope="col" style="font-weight:bold;width:3%;">Standard</th>
+                                    <th class="Header" align="center" valign="middle" scope="col" style="font-weight:bold;width:3%;">Center</th>
+                                    <th class="Header" align="center" valign="middle" scope="col" style="font-weight:bold;width:3%;">Center_Code</th>
+                                    <th class="Header" align="center" valign="middle" scope="col" style="font-weight:bold;width:3%;">Subject_List</th>
+                                    <th class="Header" align="center" valign="middle" scope="col" style="font-weight:bold;width:3%;">Eligible</th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody id="Questiondetails"></tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <center>
+        
+            <label></label><br />
+            <input type="button" class="btn btn-primary" id="btn_submit" value="Submit">
+       
+    </center>
+  
+
+    <!--<center>-->
+    @*<table class="AppFormTable" id="tbl_list" style="background-color: #e7fafe;"></table>*@
+    <!--<div class="col-sm-12">
+            <table id="Questiondata" class="table table-bordered table-condensed table-striped">
+                <thead>
+                    <tr>
+                        <th>ApplicationId </th>
+                        <th> First_Name   </th>
+                        <th> Last_Name   </th>
+                        <th> Mobile_No   </th>
+                        <th> Standard    </th>
+                        <th> Center      </th>
+                        <th> Center_Code  </th>
+                        <th> Subject_List</th>
+                        <th> Verify</th>
+
+                    </tr>
+                </thead>
+
+                <tbody id="Questiondetails">
+                </tbody>
+            </table>
+
+        </div>
+    </center>-->
+</form>
+
+<script>
+
+    $("#Div_Code").change(function () {
+
+        Get_Inspection_Record("0");
+
+    });
+    $("#btn_Excel").click(function () {
+
+        Get_Inspection_Record("1");
+
+    });
+
+
+    function Get_Inspection_Record(Excel) {
+        $('#Questiondetails tr').remove();
+        $.ajax({
+            type: 'POST',
+            url: 'StateDashboard',
+            //dataType: 'json',
+            data: {
+                Div_Code: $("#Div_Code").val(),
+                Excel: Excel
+            },
+            beforeSend: function () {
+                Showloader();
+            },
+            complete: function () {
+                Hideloader();
+            },
+            success: function (data) {
+
+                if (data.Result) {
+
+                    $.each(data.Response, function (i, item) {
+                        var rows = "<tr>" +
+                            "<td>" + (i + 1) + `<input type="hidden" id="hd_id" value=` + item.Id + `> ` + "</td>" +
+                    
+                            "<td >" + item.ApplicationId + "</td>" +
+                            "<td >" + item.First_Name + "</td>" +
+                            "<td >" + item.Last_Name + "</td>" +
+                            "<td >" + item.Mobile_No + "</td>" +
+                            "<td >" + item.Standard + "</td>" +
+                            "<td >" + item.Center + "</td>" +
+                            "<td >" + item.Center_Code + "</td>" +
+                            "<td >" + item.Subject_List + "</td>" +
+
+
+                            "<td>" + `<input type = "checkbox" id="checkbox" class = "btn btn-primary" value="checked" />` + `<div id="verify"></div>` + "</td>" +
+                            +"<tr>"
+                        $('#Questiondetails').append(rows);
+                        
+                    });
+                    if (Excel == "1") {
+
+                        window.location.href = "../StateData/" + data.FileName + ".xlsx";
+
+                    }
+                }
+
+
+            },
+            error: function (ex) {
+                alert('Failed.' + ex);
+            }
+        });
+    }
+
+
+    $("#Questiondata").on('change', 'input', function () {
+        
+        var row = $(this).closest('tr');
+        var ID = row.find("input[id=hd_id]").val();
+        
+        
+
+        $("#btn_submit").click(function (e) {
+            
+            e.preventDefault();
+            $.ajax({
+                type: 'post',
+                url: 'VerifyEligible',
+                //dataType: 'json',
+                data: {
+                    ID: ID
+                },
+                beforeSend: function () {
+                    Showloader();
+                },
+                complete: function () {
+                    Hideloader();
+                },
+                success: function (data) {
+                 
+                    if (data.Result) {
+                        row.remove();
+                    }
+                },
+                error: function (ex) {
+                    alert('Failed.' + ex);
+                }
+            });
+        });
+    });
+
+
+    
+
+    //function Get_Inspection_Record(Excel) {
+    //    $.ajax({
+    //        type: 'POST',
+    //        url: 'StateDashboard',
+    //        //dataType: 'json',
+    //        data: {
+    //            Div_Code: $("#Div_Code").val(),
+              
+    //            Excel: Excel
+    //        },
+    //        beforeSend: function () {
+    //            Showloader();
+    //        },
+    //        complete: function () {
+    //            Hideloader();
+    //        },
+    //        success: function (data) {
+
+    //            var temp = "";
+    //            temp += `<thead>  <tr><td>Sr.No.</td>  
+    //                              <td>ApplicationId </td>
+    //                              <td> First_Name    </td>
+    //                              <td> Last_Name     </td>
+    //                              <td> Mobile_No     </td>
+    //                              <td> Standard      </td>
+    //                              <td> Center        </td>
+    //                              <td>Center_Code    </td>
+    //                              <td> Subject_List   </td>
+    //                              <td> Verify        </td>
+    //                    </tr></thead><tbody`;
+    //            if (data.Result) {
+    //                $("#tbl_list").empty();
+    //                $.each(data.Response, function (i, data) {
+    //                    temp += `<tr><td>` + (i + 1) + `<input type='hidden' id='hd_ID' value=`+data.Id+`/>`+`</td><td>`
+    //                                         + data.ApplicationId + `</td>
+    //                                <td>`    + data.First_Name    + `</td>
+    //                                <td>`    + data.Last_Name     + `</td>
+    //                                <td>`    + data.Mobile_No     + `</td>
+    //                                <td>`    + data.Standard      + `</td>
+    //                                <td>`    + data.Center        + `</td>
+    //                                <td>`    + data.Center_Code   + `</td>
+    //                                <td>`    + data.Subject_List + `</td>
+    //                                <td>`    +`<input type='checkbox' value='Checkbox id='chkbox'/>` + `</td>
+    //                                </tr>`;
+    //                });
+    //                temp += `</tbody>`;
+    //                $("#tbl_list").append(temp);
+
+    //                if (Excel == "1") {
+
+    //                    window.location.href = "../State/" + data.FileName + ".xlsx";
+
+    //                }
+    //            }
+    //        },
+    //        error: function (ex) {
+    //            alert('Failed.' + ex);
+    //        }
+    //    });
+    //}
+
+</script>
+
